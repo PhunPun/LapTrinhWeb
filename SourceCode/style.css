@@ -21,6 +21,7 @@ header{
     top: 0;
     left: 0;
     right: 0;
+    z-index: 1000;
 }
 .logo{
     flex: 2;
@@ -168,11 +169,36 @@ header{
     display: flex;
 }
 /*<!------------------------------------ section ---------------------------------- -->*/
-
 .mainMeo{
     width: 100%;
 }
 .mainMeo> img{
     width: 100%;
-    
+    z-index: -1;
+}
+.mainMeo> h2{
+    width: 100%;
+    position:absolute;
+    top: 45%;
+    left: 0;
+    text-align: center;
+    font-family: "Lexend Zetta", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bolder;
+    font-style: normal;
+    font-size: 500%;   
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 30px rgba(210, 142, 87, 0.854), 0 0 10px rgba(185, 22, 22, 0.87);
+
+}
+.mainMeo> p{
+    width: 100%;
+    position: absolute;
+    top: 55%;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 200%;
+    color: white;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px black, 0 0 30px rgba(210, 142, 87, 0.854), 0 0 10px rgba(185, 22, 22, 0.87);
 }
