@@ -1,0 +1,18 @@
+.design > h1 {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-family: 'Courier New', Courier, monospace; /* Căn giữa bên trái */
+    background: url(/Image/background-contact.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    padding-left: 20px; /* Thêm khoảng cách từ bên trái nếu cần */
+    color: white;
+    font-family: 'Courier New', Courier, monospace; /* Loại bỏ khoảng cách mặc định */
+}
+
+.design h1>span {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}

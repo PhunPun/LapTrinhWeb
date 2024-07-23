@@ -9,12 +9,12 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url('Anh meo background') no-repeat center center fixed;
+    background: url('/Image/mainMeo.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
 .form-container {
-    background-color: rgba(210, 142, 87, 0.854); /*Mới thấy gửi thấy tone màu da hợp với background nên chỉnh sang màu da*/
+    background-color: rgba(210, 142, 87, 0.397); /*Mới thấy gửi thấy tone màu da hợp với background nên chỉnh sang màu da*/
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px black;
@@ -54,7 +54,7 @@ input {
 button {
     width: 100%;
     padding: 10px;
-    background-color: blue;
+    background-color: rgba(255, 77, 0, 0.363);
     color: white;
     border: none;
     border-radius: 4px;
@@ -63,7 +63,7 @@ button {
 }
 
 button:hover {
-    background-color: blue
+    background-color: rgb(142, 250, 19)
 }
 
 .toggle-form {
@@ -72,7 +72,7 @@ button:hover {
 }
 
 .toggle-form a {
-    color: blue;
+    color: rgb(224, 10, 10);
     text-decoration: none;
 }
 
