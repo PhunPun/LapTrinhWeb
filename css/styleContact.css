@@ -2,17 +2,61 @@
     display: flex;
     align-items: center;
     color: white;
-    font-family: 'Courier New', Courier, monospace; /* Căn giữa bên trái */
+    font-family: 'Courier New', Courier, monospace;
     background: url(/Image/background-contact.jpg);
     background-size: cover;
     background-position: center;
     height: 400px;
     padding-left: 20px; /* Thêm khoảng cách từ bên trái nếu cần */
     color: white;
-    font-family: 'Courier New', Courier, monospace; /* Loại bỏ khoảng cách mặc định */
+    font-family: 'Courier New', Courier, monospace; 
 }
 
 .design h1>span {
     color: white;
     font-family: 'Courier New', Courier, monospace;
 }
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px; /*Tạo khoảng cách giữa nội dung và cạnh của thẻ footer*/
+    display: flex; 
+    justify-content: space-around;/*Căn chỉnh nội dung thẻ footer theo chiều ngang*/
+    align-items: flex-start; /*Căn chỉnh nội dung thẻ footer theo chiều dọc*/
+    flex-wrap: wrap; /*Tự động chuyển dòng*/
+}
+
+.footer-column {
+    flex: 1; 
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-column p {
+    color: #ff6347; 
+    font-weight: bold;
+}
+
+.footer-column i {
+    margin: 5px 0; /*Khoảng cách giữa các phần tử*/
+    color: #87ceeb; 
+}
+
+.footer-column a {
+    color: #1ec5dbb8; /*Màu đường liên kết hiển thị */
+    text-decoration: none;
+}
+/*Màu đường liên kết khi di chuột qua*/
+.footer-column a:hover {
+    color: #ff6347; 
+    text-decoration: underline; /*Gạch dưới liên kết*/
+}
+
+/*Style Icon*/
+.footer-column i.fa-envelope, .footer-column i.fa-phone, .footer-column i.fa-facebook {
+    margin-right: 8px; 
+    color: #87ceeb; 
+}
+
+
+  
