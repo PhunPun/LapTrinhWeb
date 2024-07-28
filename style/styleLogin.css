@@ -9,7 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url('/images/mainMeo.jpg') no-repeat center center fixed;
+    background: url('../images/mainMeo.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
