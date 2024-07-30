@@ -9,6 +9,7 @@
     flex: 2;
     padding-left: 1%;
     padding-top: 10%;
+    padding-bottom: 10%;
     font-size: 20px;
 }
 .product-subMenu1>li>a{
@@ -18,10 +19,10 @@
 .product-subMenu1{
     position: fixed;
     width: 20%;
+
 }
 
 .product-menu-domestic-foreign{
-    background-color: rgba(249, 188, 137, 0.443);
     text-align: center;
 }
 .product-subMenu2>li>a{
