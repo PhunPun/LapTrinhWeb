@@ -1,0 +1,33 @@
+.space{
+    width: 100%;
+    height: 10vh;
+}
+.content-product-name{
+    text-align: center;
+    padding: 20px 0;
+}
+.product-section-over{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 10%;
+    
+}
+.product-section-option{
+    width: 23%;
+    margin: 1%;
+    border-radius: 5px;
+    height: 350px;
+}
+.product-section-option:hover{
+    box-shadow: 5px 5px 10px rgba(210, 142, 87, 0.854);
+}
+.product-section-option-img>img{
+    max-width: 90%;
+    border-radius: 5px;
+}
+.product-section-option-img{
+    width: 100%;
+}
+.product-section-option:hover .product-section-option-img>img{
+    max-width: 98%;
+}

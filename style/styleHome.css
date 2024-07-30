@@ -241,6 +241,31 @@ header{
     min-width: 700px;
     text-shadow: 1px 1px 2px black, 0 0 30px rgba(210, 142, 87, 0.854), 0 0 10px rgba(185, 22, 22, 0.87);
 }
+.menu-mobile{
+    position: fixed;
+    top: 15%;
+    left: 3%;
+    width: 30px;
+    height: 30px;
+}
+.menu-mobile-over{
+    visibility: hidden;
+    width: 150px;
+    background-color: white;
+    text-align: start;
+}
+.menu-mobile:focus .menu-mobile-over{
+    visibility: visible;
+}
+.mobile-subMenu1{
+    visibility: hidden;
+    position: absolute;
+    left: 150px;
+    top: 0;
+}
+.mobile-subMenu2{
+    visibility: hidden;
+}
 @media screen and (max-width: 980px) {
     .mainMeo>h2{
         font-size: 300%;
@@ -497,7 +522,7 @@ header{
         font-size: 20px;
     }
     .home-footer-colum-section> ul{
-        padding-left: 25%;
+        padding-left: 15%;
     }
     
 }
