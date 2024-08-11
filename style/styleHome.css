@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 li{
     list-style: none;
@@ -23,6 +24,7 @@ header{
     right: 0;
     z-index: 1000;
     height: 10vh;
+    
 }
 .logo{
     flex: 2;
@@ -287,7 +289,7 @@ header{
     font-optical-sizing: auto;
 }
 .about{
-    padding-top: 5%;
+    padding-top: 2.5%;
     display: flex;
 }
 .about-info{
@@ -462,6 +464,8 @@ header{
 }
 .home-footer-colum-section{
     margin-top: 5%;
+    align-items: center;
+    justify-content: center;
 }
 .home-footer-colum-section> ul > li> a{
     color: black;
@@ -523,11 +527,12 @@ header{
     }
     .home-footer-colum-section> ul{
         padding-left: 15%;
+        
     }
     
 }
 .end-footer-over{
-    padding: 50px;
+    padding: 25px;
     text-align: center;
     color: white;
 }
