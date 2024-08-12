@@ -22,6 +22,16 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <script>
+      function support() {
+        w = window.open(
+          "Login.html",
+          "lg",
+          "width=400, height=400, top=50,left=600"
+        );
+        w.focus();
+      }
+    </script>
   </head>
 
   <body>
@@ -64,7 +74,9 @@
       <div class="other">
         <li class="other1"><input type="text" placeholder="Tìm kiếm" /></li>
         <div class="other23">
-          <li class="other2"><a href="./Login.html">Đăng nhập</a></li>
+          <li class="other2">
+            <a onclick="support()"><i class="fas fa-user"></i></a>
+          </li>
           <li class="other3"><a href="#">Gio</a></li>
         </div>
       </div>
@@ -92,7 +104,7 @@
               cả hình ảnh, giá cả, và thông tin về cách chăm sóc đều được
               <b>Mèo Mellow</b> đầy đủ và chính xác nhất.
             </p>
-            <a href="#"><button>Chi tiết</button></a>
+            <a href="/webfonts/Introduce.html"><button>Chi tiết</button></a>
           </div>
         </div>
         <div class="about-img">

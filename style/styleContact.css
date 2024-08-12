@@ -11,6 +11,7 @@
     color: white;
     font-family: 'Courier New', Courier, monospace; 
     padding-left: 10px;
+    background-color:rgba(210, 142, 87, 0.854);
 }
 .design h1>img{
     width: 300px;
@@ -25,55 +26,89 @@
 footer {
     background-color: #333;
     color: #fff;
-    padding: 20px; /*Tạo khoảng cách giữa nội dung và cạnh của thẻ footer*/
-    display: flex; 
-    justify-content: space-around;/*Căn chỉnh nội dung thẻ footer theo chiều ngang*/
-    align-items: flex-start; /*Căn chỉnh nội dung thẻ footer theo chiều dọc*/
-    flex-wrap: wrap; /*Tự động chuyển dòng*/
+    padding: 20px;
+    display: flex;
+    justify-content: space-around; /* Căn chỉnh các phần tử theo chiều ngang */
+    align-items: flex-start;
+    flex-wrap: wrap; /* Tự động chuyển dòng */
 }
 
 .footer-column {
-    flex: 1; 
+    flex: 1;
     min-width: 200px;
     margin: 10px;
 }
 
 .footer-column p {
-    color: #ff6347; 
+    color: #ff6347;
     font-weight: bold;
 }
 
 .footer-column i {
-    margin: 5px 0; /*Khoảng cách giữa các phần tử*/
-    color: #87ceeb; 
+    margin: 5px 0;
+    color: #87ceeb;
 }
 
 .footer-column a {
-    color: #1ec5dbb8; /*Màu đường liên kết hiển thị */
+    color: #1ec5dbb8;
     text-decoration: none;
 }
-/*Màu đường liên kết khi di chuột qua*/
+
 .footer-column a:hover {
-    color: #ff6347; 
-    text-decoration: underline; /*Gạch dưới liên kết*/
+    color: #ff6347;
+    text-decoration: underline;
 }
 
-/*Style Icon*/
+/* Style Icon */
 .footer-column i.fa-envelope, .footer-column i.fa-phone, .footer-column i.fa-facebook {
-    margin-right: 8px; 
-    color: #87ceeb; 
+    margin-right: 8px;
+    color: #87ceeb;
 }
+
 .footer-column iframe {
     width: 100%;
     height: 200px;
     border: 0;
 }
+
+.home-footer-colum-section {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    margin: 10px;
+}
+
+.home-footer-colum-section h2 {
+    margin-bottom: 10px;
+    font-family: 'Roboto Slab', serif;
+    color: #ff6347;
+}
+
+.home-footer-colum-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.home-footer-colum-section li {
+    margin: 5px 0;
+    
+}
+
+.home-footer-colum-section a {
+    color: #1ec5dbb8 !important; /* Màu chữ liên kết mặc định */
+    text-decoration: none !important; /* Bỏ gạch chân */
+}
+
+.home-footer-colum-section a:hover {
+    color: #ff6347 !important; /* Màu chữ khi di chuột qua */
+    text-decoration: underline !important; /* Gạch chân liên kết khi di chuột qua */
+}
+
+
 .footer-button {
     margin-top: 20px;
     text-align: center;
     background-color: #333;
-    margin-top: 0px;
-
 }
 
 .footer-button button {
@@ -89,6 +124,6 @@ footer {
 
 .footer-button button:hover {
     background-color: #e5533d;
-    cursor: pointer;
 }
+
   

@@ -70,31 +70,6 @@ p {
     color: #f7b733;
 }
 
-.back-home {
-    text-align: center;
-    margin-top: 20px;
-}
 
-.back-home .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #f7b733;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-}
 
-.back-home .btn:hover {
-    background: #e09627;
-}
 
-.back-home .btn i {
-    margin-right: 5px;
-}
-
-@media (max-width: 768px) {
-    .container {
-        width: 95%;
-    }
-}
