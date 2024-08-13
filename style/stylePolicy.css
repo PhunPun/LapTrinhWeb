@@ -162,5 +162,6 @@ main {
     background-color: white;
 }
 .text-right-ehz:hover > a{
-    color: teal;
+    color: rgb(149, 241, 241);
 }
+
