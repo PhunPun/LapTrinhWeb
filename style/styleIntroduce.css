@@ -4,73 +4,155 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    
 }
 
 .container {
     width: 80%;
-    margin: 0 auto;
+    margin: 0 ;
     overflow: hidden;
     padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto Slab', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: gra;
+    
 }
 
-header {
+header>h1 {
     text-align: center;
-    padding: 20px 0;
-    background: #f7b733;
-    color: #fff;
-    border-radius: 10px 10px 0 0;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2em;
-}
-
-header p {
-    margin: 0;
-    font-size: 1.2em;
-}
-
-main {
-    padding: 20px;
-}
-
-.introduction, .features, .services {
-    margin-bottom: 20px;
-}
-
-h2 {
-    color: #333;
-    border-bottom: 2px solid #f7b733;
+    margin:0 auto;
     padding-bottom: 10px;
 }
 
-p {
+main {
+    font-family: "Roboto Slab", serif;
+    padding: 20px;
+    background: rgba(204, 143, 94, 0.522);
+    border: #0ff3fada 1px solid;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+}
+.policy {
+  margin-bottom: 20px;
+}
+.policy h2 {
+  color: #ff6347;
+  font-size: 24px;
+  margin-bottom: 10px;
+  border-bottom: #77aaff 2px solid;
+}
+.policy p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
     color: #555;
 }
-
-.features ul, .services ul {
-    list-style: none;
-    padding: 0;
+.right-contact {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px 0 0 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
 }
 
-.features ul li, .services ul li {
-    background: #f7f7f7;
-    margin-bottom: 10px;
+
+.right-contact-over {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 10px;
-    border: 1px solid #ddd;
+}
+
+.right-contact-over > img {
+    width: 50px;
+    margin-bottom: 20px;
+}
+
+.right-contact-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.right-contact-main > div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative;
+}
+
+.right-contact-main > div > img {
+    width: 30px;
+    margin-right: 0;
+}
+
+.right-contact-main > div > div {
+    display: none;
+    width: auto;
+    height: auto;
+    position: absolute;
+    right: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 5px 10px;
     border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
 }
 
-.features ul li i, .services ul li i {
-    margin-right: 10px;
-    color: #f7b733;
+.right-contact-main > div:hover > div {
+    display: block;
 }
-
-
-
+.text-right-ehz{
+    position: absolute;
+    width: 130px;
+    height: 35px;
+    background-color: rgba(210, 142, 87, 0.854);
+    right: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+.text-right-ehz>a{
+    font-weight: 600;
+    color: darkred;
+    padding: 10px 50px;
+}
+.right-email:hover .right-text-none-email{
+    display: block;
+}
+.right-hotline:hover .right-text-none-hotline{
+    display: block;
+}
+.right-zalo:hover .right-text-none-zalo{
+    display: block;
+}
+.text-right-ehz:hover{
+    border: 2px inset rgba(210, 142, 87, 0.854);
+    background-color: white;
+}
+.text-right-ehz:hover > a{
+    color: rgb(149, 241, 241);
+}
 

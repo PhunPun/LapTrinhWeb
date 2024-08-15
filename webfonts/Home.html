@@ -22,16 +22,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <script>
-      function support() {
-        w = window.open(
-          "Login.html",
-          "lg",
-          "width=400, height=500, top=50,left=600"
-        );
-        w.focus();
-      }
-    </script>
+    <script src="/js/login.js" defer></script>
   </head>
 
   <body>
@@ -52,10 +43,12 @@
         <li class="other1"><input type="text" placeholder="Tìm kiếm" /></li>
         <div class="other23">
           <li class="other2">
-            <a onclick="support()"><i class="fas fa-user"></i></a>
+            <a onclick="supportlg()"><i class="fas fa-user"></i></a>
+            <span id="user-display" onclick="supportlg()">Đăng Nhập</span>
           </li>
-          <li class="other3"><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-
+          <li class="other3">
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+          </li>
         </div>
       </div>
     </header>

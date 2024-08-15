@@ -27,16 +27,8 @@
    <link rel="stylesheet" href="/js/Product.js">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <script>
-    function support() {
-      w = window.open(
-        "Login.html",
-        "lg",
-        "width=400, height=500, top=50,left=600"
-      );
-      w.focus();
-    }
-  </script>
+   <script src="/js/Policy.js" defer></script>
+    <script src="/js/login.js"></script>
   </head>
 
   <body>
@@ -58,7 +50,8 @@
         <li class="other1"><input type="text" placeholder="Tìm kiếm" /></li>
         <div class="other23">
             <li class="other2">
-                <a onclick="support()"><i class="fas fa-user"></i></a>
+              <a onclick="supportlg()"><i class="fas fa-user"></i></a>
+              <span id="user-display" onclick="supportlg()">Đăng Nhập</span>
               </li>
               <li class="other3"><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
         </div>

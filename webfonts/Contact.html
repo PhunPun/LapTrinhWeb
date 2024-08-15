@@ -7,28 +7,11 @@
     <title>Liên Hệ</title>
     <link rel="stylesheet" href="../style/styleHome.css" />
     <link rel="stylesheet" href="../style/styleContact.css" />
-    <link rel="stylesheet" href="/js/Contact.js">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/js/Contact.js" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script>
-      var w;
-      function support() {
-        w = window.open(
-          "Support.html",
-          "sp",
-          "width=400, height=400, top=50,left=600"
-        );
-        w.focus();
-      }
-      function supportlg() {
-        w = window.open(
-          "Login.html",
-          "lg",
-          "width=400, height=500, top=50,left=600"
-        );
-        w.focus();
-      }
-    </script>
+    <script src="/js/Contact.js" defer></script>
+    <script src="/js/login.js" defer></script>
     <!------------------------------------ Thư viện icon ------------------------------------>
     <link
       rel="stylesheet"
@@ -44,7 +27,6 @@
         <li><a href="./Home.html">Trang chủ</a></li>
         <li>
           <a href="./Product.html">Mèo cưng</a>
-          
         </li>
         <li><a href="/webfonts/Introduce.html">Giới thiệu</a></li>
         <li><a href="./Contact.html">Liên hệ</a></li>
@@ -54,15 +36,18 @@
         <div class="other23">
           <li class="other2">
             <a onclick="supportlg()"><i class="fas fa-user"></i></a>
+            <span id="user-display" onclick="supportlg()">Đăng Nhập</span>
           </li>
-          <li class="other3"><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+          <li class="other3">
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+          </li>
         </div>
       </div>
     </header>
-    <br>
-    <br>
-    <br>
-   
+    <br />
+    <br />
+    <br />
+
     <div class="design">
       <h1>
         <img src="/images/imcontact.gif" alt="" />
@@ -80,8 +65,8 @@
         <a href="https://www.facebook.com/ZawnHuy/"
           ><i class="fab fa-facebook"></i> Facebook</a
         >
-        <br>
-        <br>
+        <br />
+        <br />
         <p><i class="fas fa-user"></i> Nguyễn Như Phương</p>
         <a href="mailto:2251120313@ut.edu.vn"
           ><i class="fas fa-envelope"></i> Email: 2251120313@ut.edu.vn</a
@@ -128,7 +113,6 @@
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
-      
     </footer>
   </body>
 </html>

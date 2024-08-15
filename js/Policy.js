@@ -1,3 +1,13 @@
+// form đăng nhập
+var w;
+function support() {
+  w = window.open(
+    "Login.html",
+    "lg",
+    "width=500, height=500, top=50,left=600"
+  );
+  w.focus();
+  //
 document.addEventListener("scroll", function () {
     const footer = document.getElementById("footer");
     const rightContact = document.querySelector(".right-contact");
@@ -15,4 +25,4 @@ document.addEventListener("scroll", function () {
       rightContact.style.transform = "translateY(-50%)";
     }
   });
-  
+}

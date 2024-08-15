@@ -87,3 +87,6 @@ button:hover {
 .toggle-form{
     color: aliceblue;
 }
+.login-box{
+    display: none;
+}

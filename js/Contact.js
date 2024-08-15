@@ -1,17 +1,19 @@
 var w;
+      //form yêu cầu hỗ trợ
       function support() {
         w = window.open(
-          "Support.html",
+          "/webfonts/Support.html",
           "sp",
-          "width=400, height=400, top=50,left=600"
+          "width=500, height=500, top=50,left=600"
         );
         w.focus();
       }
+      //form đăng nhập
       function supportlg() {
         w = window.open(
-          "Login.html",
+          "/webfonts/Login.html",
           "lg",
-          "width=400, height=400, top=50,left=600"
+          "width=500, height=500, top=50,left=600"
         );
         w.focus();
       }
