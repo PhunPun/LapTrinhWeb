@@ -13,137 +13,55 @@
     display: flex;
     margin-bottom: 20px;
 }
-.product-menu{
-    flex: 2;
-    padding-left: 1%;
+/*-------------------------------------------------------left---------------------------------------------------*/
+.kind_of-left{
+    flex: 1;
     padding-top: 10px;
     font-size: 16px;
+    position: relative;
 }
-.product-subMenu1>li>a{
-    font-weight: 800;
-    color: rgb(249, 97, 63);
-}
-.product-subMenu1{
-    position: sticky;
-    width: 100%;
-    top: 20%;
-    border-left: 2px dashed black;
-}
-.product-menu-domestic-foreign{
-    text-align: center;
-    margin-left: 10%;
-    margin-right: 5%;
-}
-.product-subMenu2>li>a{
-    display: block;
-    color: black;
-    padding: 2.5% 0;
-    
-}
-.product-subMenu2>li{
-    
-    margin-left: 10%;
-    margin-right: 5%;
-}
-.product-subMenu2>li:hover{
-    border-top: 1px solid rgb(66, 66, 66);
-    border-bottom: 1px solid rgb(66, 66, 66);
-}
-.product-active-menu{
-    text-decoration: underline;
-    background-color: antiquewhite;
-}
-.product-main-option-over{
-    flex: 7;
-}
-.right-contact{
-    flex: 1;
-}
-.right-contact-over{
+.kind-of-left-over{
     width: 100%;
     position: sticky;
-    top: 30%;
+    top: 35%;
 }
-.right-contact-over>img{
+.kind-of-left-main{
+    width: 80%;
+}
+.kind-of-left-main>img{
+    max-width: 100%;
+}
+/*-----------------------------------------------------main----------------------------------------------------*/
+.kind-space{
+    height: 10vh;
+}
+.kind-img-heard{
     width: 100%;
 }
-.right-contact-main-over{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-.right-contact-main{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    box-shadow: 0 0 7px 0px gray;
-    padding-bottom: 15%;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    margin-right: 9%;
-}
-.right-contact-main>div{
+.kind-img-heard-over{
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-top: 20%;
-}
-.right-contact-main>div>img{
-    width: 50%;
-    margin-right: 20%;
-}
-.right-contact-main>div>div{
-    width: 130px;
-    height: 35px;
-    display: none;
-}
-.text-right-ehz{
-    position: absolute;
-    width: 130px;
-    height: 35px;
-    background-color: rgba(210, 142, 87, 0.854);
-    right: 50%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-bottom: 1px solid black;
 }
-.text-right-ehz>a{
-    font-weight: 600;
-    color: darkred;
-    padding: 10px 50px;
+.kind-img-heard-over>img{
+    width: 40%;
+    max-height: 100%;
 }
-.right-email:hover .right-text-none-email{
-    display: block;
-}
-.right-hotline:hover .right-text-none-hotline{
-    display: block;
-}
-.right-zalo:hover .right-text-none-zalo{
-    display: block;
-}
-.text-right-ehz:hover{
-    border: 2px inset rgba(210, 142, 87, 0.854);
-    background-color: white;
-}
-.text-right-ehz:hover > a{
-    color: teal;
-}
-.product-main-option{
-    padding-top: 6%;
+.product-main-option-over{
+    flex: 8;
 }
 .content-product-name{
     text-align: center;
     padding: 10px 0;
-    
 }
 .content-product-name>h1{
     color:rgba(140, 92, 9, 0.934);
     font-family: "Cherry Bomb One", system-ui;
     font-size: 40px;
-    
+    padding: 2.5% 0;
 }
 .product-section-over{
     display: flex;
@@ -165,7 +83,8 @@
     width: 98%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    max-height: 200px;
+    max-height: 230px;
+    
 }
 .product-section-option-img{
     width: 100%;
@@ -201,10 +120,6 @@
 }
 .slideshow-see-more-container:hover .slideshow-see-more>img{
     opacity: 1;
-}
-.slideshow-see-more-container:hover .text-slideshow-see-more{
-    color: white;
-    text-shadow: 0 0 10px rgb(251, 134, 32);
 }
 .text-slideshow-see-more{
     font-size: 30px;
@@ -296,4 +211,109 @@
     text-align: end;
     color: crimson;
     font-weight: 900
+}
+/*----------------------------------------------------right---------------------------------------------------*/
+.right-contact{
+    flex: 1;
+}
+.right-contact-over{
+    width: 100%;
+    position: sticky;
+    top: 30%;
+}
+.right-contact-over>img{
+    width: 100%;
+}
+.right-contact-main-over{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.right-contact-main{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    box-shadow: 0 0 7px 0px gray;
+    padding-bottom: 15%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin-right: 9%;
+}
+.right-contact-main>div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 20%;
+}
+.right-contact-main>div>img{
+    width: 50%;
+    margin-right: 20%;
+}
+.right-contact-main>div>div{
+    width: 130px;
+    height: 35px;
+    display: none;
+}
+.text-right-ehz{
+    position: absolute;
+    width: 130px;
+    height: 35px;
+    background-color: rgba(210, 142, 87, 0.854);
+    right: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.text-right-ehz>a{
+    font-weight: 600;
+    color: darkred;
+    padding: 10px 50px;
+}
+.right-email:hover .right-text-none-email{
+    display: block;
+}
+.right-hotline:hover .right-text-none-hotline{
+    display: block;
+}
+.right-zalo:hover .right-text-none-zalo{
+    display: block;
+}
+.text-right-ehz:hover{
+    border: 2px inset rgba(210, 142, 87, 0.854);
+    background-color: white;
+}
+.text-right-ehz:hover > a{
+    color: teal;
+}
+/*---------------------------------------------------can you like -----------------------------------------------*/
+.kind-can-you-like-container{
+    width: 100%;
+    height: 100px;
+}
+.kind-can-you-like-over{
+    width: 100%;
+}
+.kind-can-you-like-heard{
+    width: 40%;
+    position: relative;
+}
+.kind-can-you-like-heard>img{
+    width: 100%;
+    max-height: 100px;
+    opacity: 0.5;
+}
+.kind-can-you-like-heard-text{
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(0,-50%);
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    color: white;
+    text-shadow: 1px 1px 1px black;
 }
