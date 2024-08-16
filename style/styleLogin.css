@@ -9,7 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url('../images/mainMeo.jpg') no-repeat center center fixed;
+    background-color: antiquewhite;
     background-size: cover;
 }
 
@@ -19,10 +19,12 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px black;
     width: 300px;
+    background-image: url('/images/login.gif');
 }
 
 .form-box {
     display: none;
+    
 }
 
 .form-box:first-child {
@@ -32,6 +34,7 @@ body {
 h2 {
     margin-bottom: 20px;
     text-align: center;
+    color: aliceblue;
 }
 
 .input-group {
@@ -42,6 +45,7 @@ label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    color: aliceblue;
 }
 
 input {
@@ -63,7 +67,8 @@ button {
 }
 
 button:hover {
-    background-color: rgb(142, 250, 19)
+    background-color:brown;
+    text-decoration: underline;
 }
 
 .toggle-form {
@@ -78,4 +83,10 @@ button:hover {
 
 .toggle-form a:hover {
     text-decoration: underline;
+}
+.toggle-form{
+    color: aliceblue;
+}
+.login-box{
+    display: none;
 }

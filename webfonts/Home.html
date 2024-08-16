@@ -22,6 +22,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <script src="/js/login.js" defer></script>
   </head>
 
   <body>
@@ -34,29 +35,6 @@
         <li><a href="./Home.html">Trang chủ</a></li>
         <li>
           <a href="./Product.html">Mèo cưng</a>
-          <ul class="subMenu1">
-            <li>
-              <a href="#">Mèo trong nước</a>
-              <ul class="subMenu2">
-                <li><a href="#">Mèo Mướp</a></li>
-                <li><a href="#">Mèo Vàng</a></li>
-                <li><a href="#">Mèo Quýt</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">Mèo nhập khẩu</a>
-              <ul class="subMenu2">
-                <li><a href="#">Mèo Ai Cập Sphynx</a></li>
-                <li><a href="#">Mèo Anh lông ngắn</a></li>
-                <li><a href="#">Mèo Anh lông dài</a></li>
-                <li><a href="#">Mèo Ba Tư</a></li>
-                <li><a href="#">Mèo chân ngắn Munchkin</a></li>
-                <li><a href="#">Mèo Ragdoll</a></li>
-                <li><a href="#">Mèo tai cụp</a></li>
-                <li><a href="#">Mèo Xiêm</a></li>
-              </ul>
-            </li>
-          </ul>
         </li>
         <li><a href="/webfonts/Introduce.html">Giới thiệu</a></li>
         <li><a href="./Contact.html">Liên hệ</a></li>
@@ -64,8 +42,13 @@
       <div class="other">
         <li class="other1"><input type="text" placeholder="Tìm kiếm" /></li>
         <div class="other23">
-          <li class="other2"><a href="./Login.html">Đăng nhập</a></li>
-          <li class="other3"><a href="#">Gio</a></li>
+          <li class="other2">
+            <a onclick="supportlg()"><i class="fas fa-user"></i></a>
+            <span id="user-display" onclick="supportlg()">Đăng Nhập</span>
+          </li>
+          <li class="other3">
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+          </li>
         </div>
       </div>
     </header>
@@ -168,7 +151,7 @@
               cả hình ảnh, giá cả, và thông tin về cách chăm sóc đều được
               <b>Mèo Mellow</b> đầy đủ và chính xác nhất.
             </p>
-            <a href="#"><button>Chi tiết</button></a>
+            <a href="/webfonts/Introduce.html"><button>Chi tiết</button></a>
           </div>
         </div>
         <div class="about-img">
