@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="../images/icon-title.png" type="image/x-icon">
         <title>Mặt hàng</title>
-        <link rel="stylesheet" href="../style/styleHome.css">
-        <link rel="stylesheet" href="../style/styleProduct.css">
-        <script src="/js/Product.js"></script>
+        <link rel="stylesheet" href="../Homes/styleHome.css">
+        <link rel="stylesheet" href="../Product/styleProduct.css">
+        <script src="../Product/Product.js"></script>
         <!------------------------------------ Thư viện font chữ ------------------------------------>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,38 +19,40 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <script src="/js/login.js" defer>
-        
-          </script>
+        <script src="../Login/Login.js" defer></script>
     </head>
 
 <body>
-    
+    <!------------------------------------ header ------------------------------------>
     <header>
-        <a href="./Home.html" class="logo">
-            <img src="../images/logo.png" alt="">
+        <a href="../Homes/Home.html" class="logo">
+          <img src="../images/logo.png" alt="" />
         </a>
         <div class="menu">
-            <li><a href="./Home.html">Trang chủ</a></li>
-            <li><a href="./Product.html">Mèo cưng</a>                               
-            </li>
-            <li><a href="./About.html">Giới thiệu</a></li>
-            <li><a href="./Contact.html">Liên hệ</a></li>
+          <li><a href="../Homes/Home.html">Trang chủ</a></li>
+          <li>
+            <a href="../Product/Product.html">Mèo cưng</a>
+          </li>
+          <li><a href="../Introduce/Introduce.html">Giới thiệu</a></li>
+          <li><a href="../Contact/Contact.html">Liên hệ</a></li>
         </div>
         <div class="other">
-            <li class="other1"><input type="text" placeholder="Tìm kiếm"></li>
-            <div class="other23">
-                <li class="other2">
-                    <a onclick="supportlg()"><i class="fas fa-user"></i></a>
-            <span id="user-display" onclick="supportlg()">Đăng Nhập</span>
-                  </li>
-                  <li class="other3"><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-            </div>
+          <li class="other1"><input type="text" placeholder="Tìm kiếm" /></li>
+          <div class="other23">
+            <li class="other2">
+              <a onclick="supportlg()"><i class="fas fa-user"></i></a>
+              <span id="user-display" onclick="supportlg()">Đăng Nhập</span>
+            </li>
+            <li class="other3">
+              <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            </li>
+          </div>
         </div>
-
-    </header>
+      </header>
+      <!------------------------------------ section ------------------------------------>
     <section>
         <div class="product-body-column">
+            <!------------------------------------ menu left ------------------------------------>
             <div class="product-menu">
                 <ul class="product-subMenu1">
                     <li>
@@ -80,8 +82,8 @@
                     </li>
                 </ul>
             </div>
+            <!------------------------------------ main ------------------------------------>
             <div class="product-main-option-over">
-                
                 <div class="product-domestic-and-foreign">
                     <div class="product-domestic">
                         <div id="domestic1" class="product-main-option">
@@ -92,9 +94,9 @@
                                 <div class="product-section-over">
                                     
                                     <div class="product-section-option">
-                                        <a href="">
+                                        <a href="../KindOf/KindOf.html">
                                             <div class="product-section-option-img">
-                                                <img src="../images/product.jpg" alt="product">
+                                                <img src="../Product/images/product.jpg" alt="product">
                                                 <div class="product-gif-new">
                                                     <img src="../images/gif-new.gif" alt="new">
                                                 </div>
@@ -117,7 +119,7 @@
                                     <div class="product-section-option">
                                         <a href="">
                                             <div class="product-section-option-img">
-                                                <img src="../images/product.jpg" alt="product">
+                                                <img src="../Product/images/product.jpg" alt="product">
                                                 <div class="product-gif-new">
                                                     <img src="../images/gif-new.gif" alt="new">
                                                 </div>
@@ -140,7 +142,7 @@
                                     <div class="product-section-option">
                                         <a href="">
                                             <div class="product-section-option-img">
-                                                <img src="../images/product.jpg" alt="product">
+                                                <img src="../Product/images/product.jpg" alt="product">
                                                 <div class="product-gif-new">
                                                     <img src="../images/gif-new.gif" alt="new">
                                                 </div>
@@ -163,7 +165,7 @@
                                     <div class="product-section-option">
                                         <a href="">
                                             <div class="product-section-option-img">
-                                                <img src="../images/product.jpg" alt="product">
+                                                <img src="../Product/images/product.jpg" alt="product">
                                                 <div class="product-gif-new">
                                                     <img src="../images/gif-new.gif" alt="new">
                                                 </div>
@@ -186,7 +188,7 @@
                                     <div class="product-section-option">
                                         <a href="">
                                             <div class="product-section-option-img">
-                                                <img src="../images/product.jpg" alt="product">
+                                                <img src="../Product/images/product.jpg" alt="product">
                                                 <div class="product-gif-new">
                                                     <img src="../images/gif-new.gif" alt="new">
                                                 </div>
@@ -209,7 +211,7 @@
                                     <div class="product-section-option">
                                         <a href="">
                                             <div class="product-section-option-img">
-                                                <img src="../images/product.jpg" alt="product">
+                                                <img src="../Product/images/product.jpg" alt="product">
                                                 <div class="product-gif-new">
                                                     <img src="../images/gif-new.gif" alt="new">
                                                 </div>
@@ -233,16 +235,16 @@
                                         <div class="product-section-see-more">
                                             <div class="slideshow-see-more-container">
                                                 <div class="slideshow-see-more fade">
-                                                    <img src="../images/slideshow-seemore-1.jpg" alt="anh 1">
+                                                    <img src="../Product/images/slideshow-seemore-1.jpg" alt="anh 1">
                                                 </div>
                                                 <div class="slideshow-see-more fade">
-                                                    <img src="../images/slideshow-seemore-2.jpg" alt="anh 1">
+                                                    <img src="../Product/images/slideshow-seemore-2.jpg" alt="anh 1">
                                                 </div>
                                                 <div class="slideshow-see-more fade">
-                                                    <img src="../images/slideshow-seemore-3.jpg" alt="anh 1">
+                                                    <img src="../Product/images/slideshow-seemore-3.jpg" alt="anh 1">
                                                 </div>
                                                 <div class="slideshow-see-more fade">
-                                                    <img src="../images/slideshow-seemore-4.jpg" alt="anh 1">
+                                                    <img src="../Product/images/slideshow-seemore-4.jpg" alt="anh 1">
                                                 </div>
                                                 <div class="text-slideshow-see-more">Nhấn để xem thêm</div>
                                             </div>
@@ -1972,40 +1974,69 @@
     <!------------------------------------ footer ------------------------------------>
     <footer>
         <div class="home-footer-over">
-            <div class="home-footer-colum">
-                <div class="home-footer-colum-about">
-                    <a href="./Home.html"><img src="../images/logo.png" alt="logo"></a>
-                    <p class="fonrt-Roboto_Slab">Chào mừng bạn đến với thế giới của những chú mèo đáng yêu!</p>
-                </div>
-                <div class="home-footer-colum-section">
-                    <h2 class="fonrt-Roboto_Slab">Chính sách</h2>
-                    <ul>
-                        <li ><a href="#" class="fonrt-Roboto_Slab">Hướng dẫn mua hàng</a></li>
-                        <li ><a href="#" class="fonrt-Roboto_Slab">Chính sách bảo hành</a></li>
-                        <li ><a href="#" class="fonrt-Roboto_Slab">Khách hàng thân thiết</a></li>
-                    </ul>
-                    <a href="./Home.html"></a>
-                </div>
-                <div class="home-footer-colum-support">
-                    <h2 class="fonrt-Roboto_Slab">Liên hệ tại</h2>
-                    <div class="home-footer-colum-support-icon">
-                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#"><i class="fa-regular fa-envelope"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-solid fa-phone"></i></a>
-                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-                    </div>
-                </div>
+          <div class="home-footer-colum">
+            <div class="home-footer-colum-about">
+              <a href="../Homes/Home.html"
+                ><img src="../images/logo.png" alt="logo"
+              /></a>
+              <p class="fonrt-Roboto_Slab">
+                Chào mừng bạn đến với thế giới của những chú mèo đáng yêu!
+              </p>
             </div>
-            <div class="end-footer">
-                <div class="end-footer-over">
-                    <span>
-                        Copyright © [2024] <a href="./Home.html" class="fonrt-Roboto_Slab" style="color: white;">Mèo Mellow</a> 
-                    </span>
-                </div>
+            <div class="home-footer-colum-section">
+              <h2 class="fonrt-Roboto_Slab">Chính sách</h2>
+              <ul>
+                <li>
+                  <a href="#" class="fonrt-Roboto_Slab">Hướng dẫn mua hàng</a>
+                </li>
+                <li>
+                  <a
+                    href="../WarrantyPolicy/Warranty_Policy.html"
+                    target="_parent"
+                    class="fonrt-Roboto_Slab"
+                    >Chính sách bảo hành</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="fonrt-Roboto_Slab">Khách hàng thân thiết</a>
+                </li>
+              </ul>
+              <a href="../Homes/Home.html"></a>
             </div>
+            <div class="home-footer-colum-support">
+              <h2 class="fonrt-Roboto_Slab">Liên hệ tại</h2>
+              <div class="home-footer-colum-support-icon">
+                <a href="https://www.facebook.com/nguyen.np.148"
+                  ><i class="fa-brands fa-facebook"></i
+                ></a>
+                <a href="mailto:2251120313@ut.edu.vn"
+                  ><i class="fa-regular fa-envelope"></i
+                ></a>
+                <a href="https://www.instagram.com/_zanhuy/"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+                <a href="tel:0978410127"><i class="fa-solid fa-phone"></i></a>
+                <a href="https://www.tiktok.com/@zanhy812"
+                  ><i class="fa-brands fa-tiktok"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="end-footer">
+            <div class="end-footer-over">
+              <span>
+                Copyright © [2024]
+                <a
+                  href="../Homes/Home.html"
+                  class="fonrt-Roboto_Slab"
+                  style="color: white"
+                  >Mèo Mellow</a
+                >
+              </span>
+            </div>
+          </div>
         </div>
-    </footer>
-    <script src="/js/Product.js"></script>
+      </footer>
+    <script src="../Product/Product.js"></script>
 </body>
 </html>

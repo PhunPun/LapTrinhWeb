@@ -13,7 +13,7 @@ form{
     border-radius: 20px;
     background-color: rgba(210, 142, 87, 0.854); 
     color: white;
-    background-image: url('/images/login.gif');
+    background-image: url('../Login/images/login.gif');
 }
 h1{
     font-family: "Roboto Slab", serif;
