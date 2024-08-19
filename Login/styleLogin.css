@@ -19,7 +19,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px black;
     width: 300px;
-    background-image: url('/images/login.gif');
+    background-image: url('../Login/images/login.gif');
 }
 
 .form-box {

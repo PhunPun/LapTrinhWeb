@@ -62,9 +62,10 @@
     flex: 1;
 }
 .right-contact-over{
-    width: 100%;
+    width: 90%;
     position: sticky;
     top: 30%;
+    float: right;
 }
 .right-contact-over>img{
     width: 100%;
@@ -96,35 +97,66 @@
     margin-right: 20%;
 }
 .right-contact-main>div>div{
-    width: 130px;
+    position: absolute;
+    width: 0px;
     height: 35px;
-    display: none;
+    right: 50%;
+    transition: width 1s;
 }
 .text-right-ehz{
     position: absolute;
-    width: 130px;
+    width: 0px;
     height: 35px;
     background-color: rgba(210, 142, 87, 0.854);
-    right: 50%;
+    right: 0%;
     display: flex;
     align-items: center;
     justify-content: center;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
+    transition: width 1s;
 }
 .text-right-ehz>a{
+    position: absolute;
     font-weight: 600;
     color: darkred;
     padding: 10px 50px;
+    display: none;
 }
 .right-email:hover .right-text-none-email{
     display: block;
+    width: 130px;
 }
+.right-email:hover .text-right-ehz{
+    display: block;
+    width: 130px;
+}
+.right-email:hover .text-right-ehz > a{
+    display: block;
+}
+
 .right-hotline:hover .right-text-none-hotline{
+    display: block;
+    width: 130px;
+}
+.right-hotline:hover .text-right-ehz{
+    display: block;
+    width: 130px;
+}
+.right-hotline:hover .text-right-ehz > a{
     display: block;
 }
 .right-zalo:hover .right-text-none-zalo{
     display: block;
+    width: 130px;
+}
+.right-zalo:hover .text-right-ehz{
+    display: block;
+    width: 130px;
+}
+.right-zalo:hover .text-right-ehz > a{
+    display: block;
+    width: 130px;
 }
 .text-right-ehz:hover{
     border: 2px inset rgba(210, 142, 87, 0.854);

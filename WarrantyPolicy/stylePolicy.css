@@ -5,9 +5,14 @@ body {
     padding: 0;
     background-color: #f4f4f4;
 }
-
+.section-main{
+    display: flex;  
+    flex-direction: row;
+    position: relative;
+    margin-bottom: 2%;
+}
 .container {
-    width: 80%;
+    flex: 9;
     margin: 0 ;
     overflow: hidden;
     padding: 20px;
@@ -50,102 +55,110 @@ main {
   margin: 0;
     color: #555;
 }
-.right-contact {
-    position: fixed;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px 0 0 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    
+.right-contact{
+    flex: 1;
 }
-
-
-.right-contact-over {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
+.right-contact-over{
+    width: 90%;
+    position: sticky;
+    top: 30%;
+    float: right;
 }
-
-.right-contact-over > img {
-    width: 50px;
-    margin-bottom: 20px;
-}
-
-.right-contact-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.right-contact-over>img{
     width: 100%;
 }
-
-.right-contact-main > div {
+.right-contact-main-over{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.right-contact-main{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    box-shadow: 0 0 7px 0px gray;
+    padding-bottom: 15%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin-right: 9%;
+}
+.right-contact-main>div{
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    position: relative;
+    justify-content: flex-end;
+    margin-top: 20%;
 }
-
-.right-contact-main > div > img {
-    width: 30px;
-    margin-right: 0;
+.right-contact-main>div>img{
+    width: 50%;
+    margin-right: 20%;
 }
-
-.right-contact-main > div > div {
-    display: none;
-    width: auto;
-    height: auto;
+.right-contact-main>div>div{
     position: absolute;
-    right: 40px;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 5px 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    white-space: nowrap;
-}
-
-.right-contact-main > div:hover > div {
-    display: block;
+    width: 0px;
+    height: 35px;
+    right: 50%;
+    transition: width 1s;
 }
 .text-right-ehz{
     position: absolute;
-    width: 130px;
+    width: 0px;
     height: 35px;
     background-color: rgba(210, 142, 87, 0.854);
-    right: 60%;
+    right: 0%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    transition: width 1s;
 }
 .text-right-ehz>a{
+    position: absolute;
     font-weight: 600;
     color: darkred;
     padding: 10px 50px;
+    display: none;
 }
 .right-email:hover .right-text-none-email{
     display: block;
+    width: 130px;
 }
+.right-email:hover .text-right-ehz{
+    display: block;
+    width: 130px;
+}
+.right-email:hover .text-right-ehz > a{
+    display: block;
+}
+
 .right-hotline:hover .right-text-none-hotline{
+    display: block;
+    width: 130px;
+}
+.right-hotline:hover .text-right-ehz{
+    display: block;
+    width: 130px;
+}
+.right-hotline:hover .text-right-ehz > a{
     display: block;
 }
 .right-zalo:hover .right-text-none-zalo{
     display: block;
+    width: 130px;
+}
+.right-zalo:hover .text-right-ehz{
+    display: block;
+    width: 130px;
+}
+.right-zalo:hover .text-right-ehz > a{
+    display: block;
+    width: 130px;
 }
 .text-right-ehz:hover{
     border: 2px inset rgba(210, 142, 87, 0.854);
     background-color: white;
 }
 .text-right-ehz:hover > a{
-    color: rgb(149, 241, 241);
+    color: teal;
 }
-
