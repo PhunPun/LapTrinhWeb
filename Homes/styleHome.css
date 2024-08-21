@@ -182,14 +182,25 @@ header{
     display: flex;
     align-items: center;
     gap: 5px;
+    font-weight: bolder;
+    font-size: 115%;
 }
 .other2:hover >a{
-    color: black;
+    color: white;
     text-decoration: underline wheat 3px;
     cursor: pointer;
 }
 .other2>span:hover{
     cursor: pointer;
+    color: black;
+    text-decoration: underline wheat;
+}
+.other2>span{
+    margin-left: 10px;
+    color: aliceblue;
+}
+.other2>a{
+    margin-left: 20px;
 }
 @media screen and (max-width: 600px) {
     .other2{

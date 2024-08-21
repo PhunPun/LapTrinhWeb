@@ -3,7 +3,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f1dfd6;
 }
 .section-main{
     display: flex;  
@@ -44,7 +44,7 @@ main {
   margin-bottom: 20px;
 }
 .policy h2 {
-  color: #ff6347;
+    color: #333;
   font-size: 24px;
   margin-bottom: 10px;
   border-bottom: #77aaff 2px solid;

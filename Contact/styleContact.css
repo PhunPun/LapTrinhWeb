@@ -3,7 +3,7 @@
     align-items: center;
     color: white;
     font-family: 'Courier New', Courier, monospace;
-    background: url(../Contact/images/background-contact.jpg);
+    background: url('/Contact/images/contact.png');
     background-size: cover;
     background-position: center;
     height: 400px;
@@ -11,7 +11,7 @@
     color: white;
     font-family: 'Courier New', Courier, monospace; 
     padding-left: 10px;
-    background-color:rgba(210, 142, 87, 0.854);
+    background-color: rgb(20, 17, 7);
 }
 .design h1>img{
     width: 300px;
@@ -24,7 +24,7 @@
     font-family: 'Courier New', Courier, monospace;
 }
 footer {
-    background-color: #333;
+    background-color: rgba(210, 142, 87, 0.854);
     color: #fff;
     padding: 20px;
     display: flex;
@@ -40,17 +40,17 @@ footer {
 }
 
 .footer-column p {
-    color: #ff6347;
+    color: white;
     font-weight: bold;
 }
 
 .footer-column i {
     margin: 5px 0;
-    color: #87ceeb;
+    color: white;
 }
 
 .footer-column a {
-    color: #1ec5dbb8;
+    color: black;
     text-decoration: none;
 }
 
@@ -62,7 +62,7 @@ footer {
 /* Style Icon */
 .footer-column i.fa-envelope, .footer-column i.fa-phone, .footer-column i.fa-facebook {
     margin-right: 8px;
-    color: #87ceeb;
+    color: white;
 }
 
 .footer-column iframe {
@@ -81,7 +81,7 @@ footer {
 .home-footer-colum-section h2 {
     margin-bottom: 10px;
     font-family: 'Roboto Slab', serif;
-    color: #ff6347;
+    color: white;
 }
 
 .home-footer-colum-section ul {
@@ -95,7 +95,7 @@ footer {
 }
 
 .home-footer-colum-section a {
-    color: #1ec5dbb8 !important; /* Màu chữ liên kết mặc định */
+    color: black !important; /* Màu chữ liên kết mặc định */
     text-decoration: none !important; /* Bỏ gạch chân */
 }
 
@@ -105,13 +105,13 @@ footer {
 }
 
 
-.footer-button {
+button {
     margin-top: 20px;
     text-align: center;
-    background-color: #333;
+    background-color: rgba(210, 142, 87, 0.854);
 }
 
-.footer-button button {
+button {
     background-color: rgba(210, 142, 87, 0.854);
     color: #ffffff;
     border-radius: 20px;
@@ -122,7 +122,7 @@ footer {
     margin-bottom: 20px;
 }
 
-.footer-button button:hover {
+button:hover {
     background-color: #e5533d;
 }
 
