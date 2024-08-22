@@ -1,0 +1,28 @@
+body{
+    background-color: bisque;
+}
+h1{
+    padding-top: 70px;
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#chon-meo, #chinh-sach-bao-hanh, #chinh-sach-van-chuyen,#quy-trinh,#luu-y{
+    padding: 20px;
+    background-color: rgba(204, 143, 94, 0.522);
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+#faqs{
+    padding: 20px;
+    background-color: rgba(204, 143, 94, 0.522);
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
