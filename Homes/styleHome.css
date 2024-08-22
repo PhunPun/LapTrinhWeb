@@ -301,8 +301,104 @@ header{
     font-family: "Roboto Slab", serif;
     font-optical-sizing: auto;
 }
-
-
+/*------------------------------------------------see other-----------------------------------------------*/
+.view-see-other-text{
+    position: relative;
+    width: 80vw;
+    left: 15%;
+    font-family: "Cherry Bomb One", system-ui;
+    font-size: 30px;
+    margin: 5% 0 1% 0;
+    color: rgba(210, 142, 87, 0.854);
+}
+.view-see-other-container{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 40vh;
+    margin-bottom: 5%;
+}
+.view-other-see-container{
+    width: 80%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap:nowrap;
+}
+.view-see-other-over{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    white-space: nowap;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.view-see-other-img{
+    position: absolute;
+    width: 24%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 0.5s;
+    flex-shrink: 0;
+}
+.view-see-other-img:hover{
+    filter: brightness(0.7);
+}
+.view-see-other-img >a{
+    padding: 0 100% 40vh 0;
+}
+.view-see-other-img:nth-child(1){
+    left: -24.5%;
+}
+.view-see-other-img:nth-child(2){
+    left: 0.5%;
+}
+.view-see-other-img:nth-child(3){
+    left: 25.5%;
+}
+.view-see-other-img:nth-child(4){
+    left: 50.5%;
+}
+.view-see-other-img:nth-child(5){
+    left: 75.5%;
+}
+.view-see-other-img:nth-child(n+6){
+    left: 100.5%;
+}
+.view-see-other-arrows-prev{
+    all: unset;
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    left: 1%;
+}
+.view-see-other-arrows-next{
+    all: unset;
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    right: 1%;
+}
+.view-other-see-container > button:hover{
+    color: coral;
+}
     
 
 /*------------------------------------------------gioi thieu-----------------------------------------------*/

@@ -358,6 +358,9 @@ section{
     transition: 0.5s;
     flex-shrink: 0;
 }
+.view-see-other-img:hover{
+    filter: brightness(0.7);
+}
 .view-see-other-img >a{
     padding: 0 100% 40vh 0;
 }
