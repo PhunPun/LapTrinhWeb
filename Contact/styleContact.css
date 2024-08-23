@@ -1,12 +1,16 @@
+.space{
+    width: 100vw;
+    height: 10vh;
+}
 .design > h1 {
     display: flex;
     align-items: center;
     color: white;
     font-family: 'Courier New', Courier, monospace;
-    background: url('/Contact/images/contact.png');
+    background: url('../Contact/images/contact.png');
     background-size: cover;
     background-position: center;
-    height: 400px;
+    height: 50vh;
     padding-left: 20px; /* Thêm khoảng cách từ bên trái nếu cần */
     color: white;
     font-family: 'Courier New', Courier, monospace; 
@@ -24,6 +28,7 @@
     font-family: 'Courier New', Courier, monospace;
 }
 footer {
+    height: 40vh;
     background-color: rgba(210, 142, 87, 0.854);
     color: #fff;
     padding: 20px;

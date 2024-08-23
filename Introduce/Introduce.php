@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,31 +31,9 @@
 
   <body>
     <!------------------------------------ header ------------------------------------>
-    <header>
-      <a href="../Homes/Home.html" class="logo">
-        <img src="../images/logo.png" alt="" />
-      </a>
-      <div class="menu">
-        <li><a href="../Homes/Home.html">Trang chủ</a></li>
-        <li>
-          <a href="../Product/Product.html">Mèo cưng</a>
-        </li>
-        <li><a href="../Introduce/Introduce.html">Giới thiệu</a></li>
-        <li><a href="../Contact/Contact.html">Liên hệ</a></li>
-      </div>
-      <div class="other">
-        <li class="other1"><input type="text" placeholder="Tìm kiếm" /></li>
-        <div class="other23">
-          <li class="other2">
-            <a onclick="supportlg()"><i class="fas fa-user"></i></a>
-            <span id="user-display" onclick="supportlg()">Đăng Nhập</span>
-          </li>
-          <li class="other3">
-            <a href="../Cart/Cart.html"><i class="fas fa-shopping-cart"></i></a>
-          </li>
-        </div>
-      </div>
-    </header>
+    <?php
+      include "../view/Header.php";
+    ?>
 
     <!------------------------------------ phần giới thiệu mới ------------------------------------>
     <section class="section-main">
@@ -65,7 +44,7 @@
         <h1>Giới Thiệu</h1>
         <main>
           <section class="introduction">
-            <h2 id="head">Giới Thiệu</h2>
+            <h2>Giới Thiệu</h2>
             <p class="fonrt-Roboto_Slab">
               <b>Mèo Mellow</b> được xây dựng nhằm cung cấp đến những khách hàng
               yêu thích mèo một loạt các lựa chọn phong phú, từ những giống mèo
@@ -81,7 +60,7 @@
           </section>
   
           <section class="team">
-            <h2 id="head">Đội Ngũ Của Chúng Tôi</h2>
+            <h2>Đội Ngũ Của Chúng Tôi</h2>
             <p class="fonrt-Roboto_Slab">
               Chúng tôi là một đội ngũ đam mê mèo với nhiều năm kinh nghiệm trong
               ngành chăm sóc và cung cấp các giống mèo. Đội ngũ của chúng tôi bao
@@ -92,7 +71,7 @@
           </section>
   
           <section class="process">
-            <h2 id="head">Quy Trình Làm Việc</h2>
+            <h2>Quy Trình Làm Việc</h2>
             <ul>
               <li>
                 <i class="fas fa-check-circle"></i> Khảo sát nhu cầu khách hàng và
@@ -114,7 +93,7 @@
           </section>
   
           <section class="offers">
-            <h2 id="head">Ưu Đãi Đặc Biệt</h2>
+            <h2>Ưu Đãi Đặc Biệt</h2>
             <p class="fonrt-Roboto_Slab">
               Chúng tôi thường xuyên có các chương trình ưu đãi đặc biệt dành cho
               khách hàng mới và khách hàng thân thiết. Đừng quên theo dõi website
@@ -124,7 +103,7 @@
           </section>
   
           <section class="features">
-            <h2 id="head">Tại sao nên chọn Mèo Mellow?</h2>
+            <h2>Tại sao nên chọn Mèo Mellow?</h2>
             <ul>
               <li><i class="fas fa-paw"></i> Đa dạng các giống mèo</li>
               <li>
@@ -171,71 +150,8 @@
     </section>
 
     <!------------------------------------ footer ------------------------------------>
-    <footer>
-      <div class="home-footer-over">
-        <div class="home-footer-colum">
-          <div class="home-footer-colum-about">
-            <a href="../Homes/Home.html"
-              ><img src="../images/logo.png" alt="logo"
-            /></a>
-            <p class="fonrt-Roboto_Slab">
-              Chào mừng bạn đến với thế giới của những chú mèo đáng yêu!
-            </p>
-          </div>
-          <div class="home-footer-colum-section">
-            <h2 class="fonrt-Roboto_Slab">Chính sách</h2>
-            <ul>
-              <li>
-                <a href="../BuyingGuide/BuyingGuide.html" class="fonrt-Roboto_Slab">Hướng dẫn mua hàng</a>
-              </li>
-              <li>
-                <a
-                  href="../WarrantyPolicy/Warranty_Policy.html"
-                  target="_parent"
-                  class="fonrt-Roboto_Slab"
-                  >Chính sách bảo hành</a
-                >
-              </li>
-              <li>
-                <a href="../LoyalCustomer/LoyalCustomer.html" class="fonrt-Roboto_Slab">Khách hàng thân thiết</a>
-              </li>
-            </ul>
-            <a href="../Homes/Home.html"></a>
-          </div>
-          <div class="home-footer-colum-support">
-            <h2 class="fonrt-Roboto_Slab">Liên hệ tại</h2>
-            <div class="home-footer-colum-support-icon">
-              <a href="https://www.facebook.com/nguyen.np.148"
-                ><i class="fa-brands fa-facebook"></i
-              ></a>
-              <a href="mailto:2251120313@ut.edu.vn"
-                ><i class="fa-regular fa-envelope"></i
-              ></a>
-              <a href="https://www.instagram.com/_zanhuy/"
-                ><i class="fa-brands fa-instagram"></i
-              ></a>
-              <a href="tel:0978410127"><i class="fa-solid fa-phone"></i></a>
-              <a href="https://www.tiktok.com/@zanhy812"
-                ><i class="fa-brands fa-tiktok"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-        <div class="end-footer">
-          <div class="end-footer-over">
-            <span>
-              Copyright © [2024]
-              <a
-                href="../Homes/Home.html"
-                class="fonrt-Roboto_Slab"
-                style="color: white"
-                >Mèo Mellow</a
-              >
-            </span>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <script src="../Homes/Home.js"></script>
+    <?php
+      include "../view/Footer.php";
+    ?>
   </body>
 </html>

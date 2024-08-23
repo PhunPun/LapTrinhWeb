@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,9 +7,9 @@
     <link rel="icon" href="../images/icon-title.png" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Liên Hệ</title>
-    <link rel="stylesheet" href="/Homes/styleHome.css" />
-    <link rel="stylesheet" href="/Contact/styleContact.css" />
-    <script src="/Contact/Contact.js" defer></script>
+    <link rel="stylesheet" href="../Homes/styleHome.css" />
+    <link rel="stylesheet" href="../Contact/styleContact.css" />
+    <script src="../Contact/Contact.js" defer></script>
     <!------------------------------------ Thư viện icon ------------------------------------>
     <link
       rel="stylesheet"
@@ -16,38 +17,13 @@
     />
   </head>
   <body>
-    <header>
-      <a href="../Homes/Home.html" class="logo">
-        <img src="../images/logo.png" alt="" />
-      </a>
-      <div class="menu">
-        <li><a href="../Homes/Home.html">Trang chủ</a></li>
-        <li>
-          <a href="../Product/Product.html">Mèo cưng</a>
-        </li>
-        <li><a href="../Introduce/Introduce.html">Giới thiệu</a></li>
-        <li><a href="./Contact.html">Liên hệ</a></li>
-      </div>
-      <div class="other">
-        <li class="other1"><input type="text" placeholder="Tìm kiếm" /></li>
-        <div class="other23">
-          <li class="other2">
-            <a onclick="supportlg()"><i class="fas fa-user"></i></a>
-            <span id="user-display" onclick="supportlg()">Đăng Nhập</span>
-          </li>
-          <li class="other3">
-            <a href="../Cart/Cart.html"><i class="fas fa-shopping-cart"></i></a>
-          </li>
-        </div>
-      </div>
-    </header>
-    <br />
-    <br />
-    <br />
-
+    <?php
+      include "../view/Header.php";
+    ?>
+    <div class ="space"></div>
     <div class="design">
       <h1>
-        <img src="/Contact/images/imcontact.gif" alt="" />
+        <img src="../Contact/images/imcontact.gif" alt="" />
       </h1>
     </div>
     <!------------------------------------ footer ------------------------------------>
@@ -80,21 +56,21 @@
         <h2 class="fonrt-Roboto_Slab">Chính sách</h2>
         <ul>
           <li>
-            <a href="../BuyingGuide/BuyingGuide.html" class="fonrt-Roboto_Slab">Hướng dẫn mua hàng</a>
+            <a href="#" class="fonrt-Roboto_Slab">Hướng dẫn mua hàng</a>
           </li>
           <li>
             <a
-              href="../WarrantyPolicy/Warranty_Policy.html"
+              href="../WarrantyPolicy/Warranty_Policy.php"
               target="_parent"
               class="fonrt-Roboto_Slab"
               >Chính sách bảo hành</a
             >
           </li>
           <li>
-            <a href="../LoyalCustomer/LoyalCustomer.html" class="fonrt-Roboto_Slab">Khách hàng thân thiết</a>
+            <a href="#" class="fonrt-Roboto_Slab">Khách hàng thân thiết</a>
           </li>
         </ul>
-        <a href="./Home.html"></a>
+        <a href="../Homes/Home.php"></a>
         
           <button onclick="support()">Yêu cầu hỗ trợ</button>
         </div>
@@ -112,6 +88,5 @@
         ></iframe>
       </div>
     </footer>
-    <script src="../Homes/Home.js"></script>
   </body>
 </html>

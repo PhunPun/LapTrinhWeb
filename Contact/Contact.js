@@ -1,6 +1,6 @@
-//form yêu cầu hỗ trợ
+var w;
+      //form yêu cầu hỗ trợ
       function support() {
-        var w;
         w = window.open(
           "/Support/Support.html",
           "sp",
@@ -10,7 +10,6 @@
       }
       //form đăng nhập
       function supportlg() {
-        var w;
         w = window.open(
           "/Login/Login.html",
           "lg",

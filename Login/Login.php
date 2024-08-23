@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
     <link rel="icon" href="../images/icon-title.png" type="image/x-icon">
     <title>Đăng nhập</title>
     <link rel="stylesheet" href="../Login/styleLogin.css">
-    
+    <script src="../Login/Login.js" defer></script>
 </head>
 <body>
     <div class="form-container">
@@ -51,6 +52,5 @@
             </form>
         </div>
     </div>
-    <script src="./Login.js"></script>
 </body>
 </html>
