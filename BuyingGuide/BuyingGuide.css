@@ -1,8 +1,12 @@
 body{
     background-color: bisque;
 }
+.space{
+    width: 100vw;
+    height:10vh;
+}
 h1{
-    padding-top: 70px;
+    padding-top: 10px;
 }
 .title{
     display: flex;

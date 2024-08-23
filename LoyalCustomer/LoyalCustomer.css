@@ -6,13 +6,16 @@ body {
     color: #333;
     
 }
+.space{
+    width: 100vh;
+    height: 10vh;
+}
 h2 {
-    
     padding: 10px 0;
     text-align: center;
 }
 h1{
-    padding-top: 70px;
+    padding-top: 10px;
     text-align: center;
 }
 .loyalty-info, .loyalty-steps, .loyalty-form {

@@ -1,3 +1,7 @@
+.space{
+    width: 100vvw;
+    height: 10vh;
+}
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
