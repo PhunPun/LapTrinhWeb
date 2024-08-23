@@ -3,7 +3,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f1dfd6;
+    background-color: bisque;
 }
 .section-main{
     display: flex;  
@@ -28,7 +28,7 @@ main {
     font-family: "Roboto Slab", serif;
     padding: 20px;
     background: rgba(204, 143, 94, 0.522);
-    border: #0ff3fada 1px solid;
+    border:  1px solid none;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
@@ -47,7 +47,7 @@ main {
     color: #333;
   font-size: 24px;
   margin-bottom: 10px;
-  border-bottom: #77aaff 2px solid;
+  border-bottom: 2px solid ;
 }
 .policy p {
   font-size: 16px;

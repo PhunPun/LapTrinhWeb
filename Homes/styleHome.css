@@ -661,6 +661,17 @@ header{
     text-align: center;
     color: white;
 }
+#logout-btn {
+    background-color: #dc3545;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+}
 
+#logout-btn:hover {
+    background-color: #c82333;
+}
 
 
