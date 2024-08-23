@@ -351,34 +351,74 @@ header{
 }
 .view-see-other-img{
     position: absolute;
-    width: 24%;
-    height: 100%;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     transition: 0.5s;
     flex-shrink: 0;
+    top: 50%;
+    transform: translate(0,-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;    
 }
 .view-see-other-img:hover{
     filter: brightness(0.7);
 }
 .view-see-other-img >a{
-    padding: 0 100% 40vh 0;
+    padding: 40% 50% ;
+    position: relative;
+    display: none;
+}
+.view-see-other-img >a > p{
+    position: absolute;
+    font-family: "Cherry Bomb One", system-ui;
+    color: black;
+    font-size: 25px;
+    text-shadow: 0 0 10px white;
+    bottom: 30%;
+    left: 50%;
+    transform: translate(-50%);
+    opacity: 0;
+    transition: bottom 3s ,opacity 3s;
 }
 .view-see-other-img:nth-child(1){
-    left: -24.5%;
+    width: 20%;
+    height: 60%;
+    z-index: 10;
+    left: 0%;
+}
+.view-see-other-img:nth-child(3) > a{
+    display: block;
+}
+.view-see-other-img:nth-child(3) > a > p{
+    opacity: 1;
+    bottom: 20%;
 }
 .view-see-other-img:nth-child(2){
-    left: 0.5%;
+    width: 25%;
+    height: 80%;
+    z-index: 11;
+    left: 15%;
 }
 .view-see-other-img:nth-child(3){
-    left: 25.5%;
+    width: 40%;
+    height: 100%;
+    z-index: 12;
+    left: 30%;
 }
 .view-see-other-img:nth-child(4){
-    left: 50.5%;
+    width: 25%;
+    height: 80%;
+    z-index: 11;
+    left: 60%;
 }
 .view-see-other-img:nth-child(5){
-    left: 75.5%;
+    width: 20%;
+    height: 60%;
+    z-index: 10;
+    left: 80%;
 }
 .view-see-other-img:nth-child(n+6){
     left: 100.5%;
@@ -394,6 +434,7 @@ header{
     text-align: center;
     color: white;
     left: 1%;
+    z-index: 13;
 }
 .view-see-other-arrows-next{
     all: unset;
@@ -406,11 +447,11 @@ header{
     text-align: center;
     color: white;
     right: 1%;
+    z-index: 13;
 }
 .view-other-see-container > button:hover{
     color: coral;
 }
-    
 
 /*------------------------------------------------gioi thieu-----------------------------------------------*/
 .about{

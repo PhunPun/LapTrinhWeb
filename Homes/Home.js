@@ -11,7 +11,7 @@ function seeOtherNext(){
 function scrollOtherImg(type){
     var otherImagesDom = document.querySelectorAll('.view-see-other-img');
     if (type === "next") {
-        otherImageCover.appendChild(otherImagesDom[0]);
+            otherImageCover.appendChild(otherImagesDom[0]);
     } else {
        otherImageCover.prepend(otherImagesDom[otherImagesDom.length -1]);
     }
