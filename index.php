@@ -49,7 +49,7 @@
             <button id="logout-btn">Đăng xuất</button>
         </div>
           <li class="other3">
-            <a href="../Cart/Cart.html"><i class="fas fa-shopping-cart"></i></a>
+            <a href="./Cart/Cart.php"><i class="fas fa-shopping-cart"></i></a>
           </li>
         </div>
       </div>

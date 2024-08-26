@@ -6,7 +6,7 @@
     <link rel="icon" href="../images/icon-title.png" type="image/x-icon" />
     <title>Yêu cầu tư vấn</title>
     <link rel="stylesheet" href="../Support/styleSupport.css">
-    <script src="../Support/Support.js" defer></script> <!-- Thêm liên kết tới file JavaScript -->
+    <script src="./Support.js" defer></script> <!-- Thêm liên kết tới file JavaScript -->
 </head>
 <body>
     <div>

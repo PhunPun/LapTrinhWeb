@@ -1,10 +1,4 @@
 <!------------------------------------ ket noi database------------------------------------>
-<?php
-    include "../connect.php";
-    $sql = "SELECT id_cat, ten_meo, price From all_product_cat";
-    $resoult = $conn->query($sql);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
