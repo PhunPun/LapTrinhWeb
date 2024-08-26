@@ -1,10 +1,7 @@
 <!------------------------------------ ket noi database------------------------------------>
 <?php
     include "../connect.php";
-    $sql = "SELECT id_cat, ten_meo, price From all_product_cat";
-    $resoult = $conn->query($sql);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -43,19 +40,10 @@
                 <ul class="product-subMenu1">
                     <li>
                         <a href="#" >
-                            <div class="product-menu-domestic-foreign fonrt-Roboto_Slab product-active-menu">Mèo trong nước</div>
+                            <div class="product-menu-domestic-foreign fonrt-Roboto_Slab  product-active-menu">Mèo nhập khẩu</div>
                         </a>
                         <ul class="product-subMenu2">
-                            <li><a class="menu-kind fonrt-Roboto_Slab product-active-menu" onclick="scrollSectionToView('domestic1')">Mèo Mướp</a></li>
-                            <li><a class="menu-kind fonrt-Roboto_Slab" onclick="scrollSectionToView('domestic2')">Mèo Vàng</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" >
-                            <div class="product-menu-domestic-foreign fonrt-Roboto_Slab">Mèo nhập khẩu</div>
-                        </a>
-                        <ul class="product-subMenu2">
-                            <li><a class="menu-kind fonrt-Roboto_Slab" onclick="scrollSectionToView('foreign1')">Mèo tai cụp</a></li>
+                            <li><a class="menu-kind fonrt-Roboto_Slab  product-active-menu" onclick="scrollSectionToView('foreign1')">Mèo tai cụp</a></li>
                             <li><a class="menu-kind fonrt-Roboto_Slab" onclick="scrollSectionToView('foreign2')">Mèo Ai Cập Sphynx</a></li>
                             <li><a class="menu-kind fonrt-Roboto_Slab" onclick="scrollSectionToView('foreign3')">Mèo Anh lông ngắn</a></li>
                             <li><a class="menu-kind fonrt-Roboto_Slab" onclick="scrollSectionToView('foreign4')">Mèo Anh lông dài</a></li>
@@ -65,351 +53,20 @@
                             <li><a class="menu-kind fonrt-Roboto_Slab" onclick="scrollSectionToView('foreign8')">Mèo Xiêm</a></li>
                         </ul>
                     </li>
+                    <li>
+                        <a href="#" >
+                            <div class="product-menu-domestic-foreign fonrt-Roboto_Slab">Mèo trong nước</div>
+                        </a>
+                        <ul class="product-subMenu2">
+                            <li><a class="menu-kind fonrt-Roboto_Slab" onclick="scrollSectionToView('domestic1')">Mèo Mướp</a></li>
+                            <li><a class="menu-kind fonrt-Roboto_Slab" onclick="scrollSectionToView('domestic2')">Mèo Vàng</a></li>
+                        </ul>
+                    </li>
+                    
                 </ul>
             </div>
             <!------------------------------------ main ------------------------------------>
             <div class="product-main-option-over">
-                <div class="product-domestic-and-foreign">
-                    <div class="product-domestic">
-                        <div id="domestic1" class="product-main-option">
-                            <div class="content-product-name">
-                                <h1>Mèo Mướp</h1>
-                            </div>
-                            <div class="product-section">
-                                <div class="product-section-over">
-                                    
-                                    <div class="product-section-option">
-                                        <a href="../KindOf/KindOf.php">
-                                            <div class="product-section-option-img">
-                                                <img src="../Product/images/product.jpg" alt="product">
-                                                <div class="product-gif-new">
-                                                    <img src="../images/gif-new.gif" alt="new">
-                                                </div>
-                                                <div class="hover-add-cart-product">
-                                                    <div class="product-add-cart">
-                                                        <img src="../images/cart-add-product.png" alt="cart">
-                                                    </div>
-                                                    <div class="add-transition-icon-cart" >
-                                                        <img src="../images/add-cart.png" alt="add">
-                                                    </div>
-                                                </div>
-                                            </div>  
-                                            <div class="product-section-option-name">
-                                                <div class="product-id"> id: M0001</div>
-                                                <div class="product-name"> Mèo anh lông ngắn xám đực</div>
-                                                <div class="product-price">15.000.000<sup>đ</sup></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="product-section-option">
-                                        <a href="../ViewProduct/ViewProduct.php">
-                                            <div class="product-section-option-img">
-                                                <img src="../Product/images/product.jpg" alt="product">
-                                                <div class="product-gif-new">
-                                                    <img src="../images/gif-new.gif" alt="new">
-                                                </div>
-                                                <div class="hover-add-cart-product">
-                                                    <div class="product-add-cart">
-                                                        <img src="../images/cart-add-product.png" alt="cart">
-                                                    </div>
-                                                    <div class="add-transition-icon-cart">
-                                                        <img src="../images/add-cart.png" alt="add">
-                                                    </div>
-                                                </div>
-                                            </div>  
-                                            <div class="product-section-option-name">
-                                                <div class="product-id"> id: M0001</div>
-                                                <div class="product-name"> Mèo anh lông ngắn xám đực</div>
-                                                <div class="product-price">15.000.000<sup>đ</sup></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="product-section-option">
-                                        <a href="../connect.php">
-                                            <div class="product-section-option-img">
-                                                <img src="../Product/images/product.jpg" alt="product">
-                                                <div class="product-gif-new">
-                                                    <img src="../images/gif-new.gif" alt="new">
-                                                </div>
-                                                <div class="hover-add-cart-product">
-                                                    <div class="product-add-cart">
-                                                        <img src="../images/cart-add-product.png" alt="cart">
-                                                    </div>
-                                                    <div class="add-transition-icon-cart">
-                                                        <img src="../images/add-cart.png" alt="add">
-                                                    </div>
-                                                </div>
-                                            </div>  
-                                            <div class="product-section-option-name">
-                                                <div class="product-id"> id: M0001</div>
-                                                <div class="product-name"> Mèo anh lông ngắn xám đực</div>
-                                                <div class="product-price">15.000.000<sup>đ</sup></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="product-section-option">
-                                        <a href="">
-                                            <div class="product-section-option-img">
-                                                <img src="../Product/images/product.jpg" alt="product">
-                                                <div class="product-gif-new">
-                                                    <img src="../images/gif-new.gif" alt="new">
-                                                </div>
-                                                <div class="hover-add-cart-product">
-                                                    <div class="product-add-cart">
-                                                        <img src="../images/cart-add-product.png" alt="cart">
-                                                    </div>
-                                                    <div class="add-transition-icon-cart">
-                                                        <img src="../images/add-cart.png" alt="add">
-                                                    </div>
-                                                </div>
-                                            </div>  
-                                            <div class="product-section-option-name">
-                                                <div class="product-id"> id: M0001</div>
-                                                <div class="product-name"> Mèo anh lông ngắn xám đực</div>
-                                                <div class="product-price">15.000.000<sup>đ</sup></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="product-section-option">
-                                        <a href="">
-                                            <div class="product-section-option-img">
-                                                <img src="../Product/images/product.jpg" alt="product">
-                                                <div class="product-gif-new">
-                                                    <img src="../images/gif-new.gif" alt="new">
-                                                </div>
-                                                <div class="hover-add-cart-product">
-                                                    <div class="product-add-cart">
-                                                        <img src="../images/cart-add-product.png" alt="cart">
-                                                    </div>
-                                                    <div class="add-transition-icon-cart">
-                                                        <img src="../images/add-cart.png" alt="add">
-                                                    </div>
-                                                </div>
-                                            </div>  
-                                            <div class="product-section-option-name">
-                                                <div class="product-id"> id: M0001</div>
-                                                <div class="product-name"> Mèo anh lông ngắn xám đực</div>
-                                                <div class="product-price">15.000.000<sup>đ</sup></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="product-section-option">
-                                        <a href="">
-                                            <div class="product-section-option-img">
-                                                <img src="../Product/images/product.jpg" alt="product">
-                                                <div class="product-gif-new">
-                                                    <img src="../images/gif-new.gif" alt="new">
-                                                </div>
-                                                <div class="hover-add-cart-product">
-                                                    <div class="product-add-cart">
-                                                        <img src="../images/cart-add-product.png" alt="cart">
-                                                    </div>
-                                                    <div class="add-transition-icon-cart">
-                                                        <img src="../images/add-cart.png" alt="add">
-                                                    </div>
-                                                </div>
-                                            </div>  
-                                            <div class="product-section-option-name">
-                                                <div class="product-id"> id: M0001</div>
-                                                <div class="product-name"> Mèo anh lông ngắn xám đực</div>
-                                                <div class="product-price">15.000.000<sup>đ</sup></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="product-section-see-more-over">
-                                        <div class="product-section-see-more">
-                                            <div class="slideshow-see-more-container">
-                                                <div class="slideshow-see-more fade">
-                                                    <img src="../Product/images/slideshow-seemore-1.jpg" alt="anh 1">
-                                                </div>
-                                                <div class="slideshow-see-more fade">
-                                                    <img src="../Product/images/slideshow-seemore-2.jpg" alt="anh 1">
-                                                </div>
-                                                <div class="slideshow-see-more fade">
-                                                    <img src="../Product/images/slideshow-seemore-3.jpg" alt="anh 1">
-                                                </div>
-                                                <div class="slideshow-see-more fade">
-                                                    <img src="../Product/images/slideshow-seemore-4.jpg" alt="anh 1">
-                                                </div>
-                                                <div class="text-slideshow-see-more">Nhấn để xem thêm</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="domestic2" class="product-main-option">
-                            <div class="content-product-name">
-                                <h1>Mèo vàng</h1>
-                            </div>
-                            <div class="product-section">
-                                <div class="product-section-over">
-                                    
-                                    <div class="product-section-option">
-                                        <a href="">
-                                            <div class="product-section-option-img">
-                                                <img src="../images/product.jpg" alt="product">
-                                                <div class="product-gif-new">
-                                                    <img src="../images/gif-new.gif" alt="new">
-                                                </div>
-                                                <div class="hover-add-cart-product">
-                                                    <div class="product-add-cart">
-                                                        <img src="../images/cart-add-product.png" alt="cart">
-                                                    </div>
-                                                    <div class="add-transition-icon-cart" >
-                                                        <img src="../images/add-cart.png" alt="add">
-                                                    </div>
-                                                </div>
-                                            </div>  
-                                            <div class="product-section-option-name">
-                                                <div class="product-id"> id: M0001</div>
-                                                <div class="product-name"> Mèo anh lông ngắn xám đực</div>
-                                                <div class="product-price">15.000.000<sup>đ</sup></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="product-section-option">
-                                        <a href="">
-                                            <div class="product-section-option-img">
-                                                <img src="../images/product.jpg" alt="product">
-                                                <div class="product-gif-new">
-                                                    <img src="../images/gif-new.gif" alt="new">
-                                                </div>
-                                                <div class="hover-add-cart-product">
-                                                    <div class="product-add-cart">
-                                                        <img src="../images/cart-add-product.png" alt="cart">
-                                                    </div>
-                                                    <div class="add-transition-icon-cart">
-                                                        <img src="../images/add-cart.png" alt="add">
-                                                    </div>
-                                                </div>
-                                            </div>  
-                                            <div class="product-section-option-name">
-                                                <div class="product-id"> id: M0001</div>
-                                                <div class="product-name"> Mèo anh lông ngắn xám đực</div>
-                                                <div class="product-price">15.000.000<sup>đ</sup></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="product-section-option">
-                                        <a href="">
-                                            <div class="product-section-option-img">
-                                                <img src="../images/product.jpg" alt="product">
-                                                <div class="product-gif-new">
-                                                    <img src="../images/gif-new.gif" alt="new">
-                                                </div>
-                                                <div class="hover-add-cart-product">
-                                                    <div class="product-add-cart">
-                                                        <img src="../images/cart-add-product.png" alt="cart">
-                                                    </div>
-                                                    <div class="add-transition-icon-cart">
-                                                        <img src="../images/add-cart.png" alt="add">
-                                                    </div>
-                                                </div>
-                                            </div>  
-                                            <div class="product-section-option-name">
-                                                <div class="product-id"> id: M0001</div>
-                                                <div class="product-name"> Mèo anh lông ngắn xám đực</div>
-                                                <div class="product-price">15.000.000<sup>đ</sup></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="product-section-option">
-                                        <a href="">
-                                            <div class="product-section-option-img">
-                                                <img src="../images/product.jpg" alt="product">
-                                                <div class="product-gif-new">
-                                                    <img src="../images/gif-new.gif" alt="new">
-                                                </div>
-                                                <div class="hover-add-cart-product">
-                                                    <div class="product-add-cart">
-                                                        <img src="../images/cart-add-product.png" alt="cart">
-                                                    </div>
-                                                    <div class="add-transition-icon-cart">
-                                                        <img src="../images/add-cart.png" alt="add">
-                                                    </div>
-                                                </div>
-                                            </div>  
-                                            <div class="product-section-option-name">
-                                                <div class="product-id"> id: M0001</div>
-                                                <div class="product-name"> Mèo anh lông ngắn xám đực</div>
-                                                <div class="product-price">15.000.000<sup>đ</sup></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="product-section-option">
-                                        <a href="">
-                                            <div class="product-section-option-img">
-                                                <img src="../images/product.jpg" alt="product">
-                                                <div class="product-gif-new">
-                                                    <img src="../images/gif-new.gif" alt="new">
-                                                </div>
-                                                <div class="hover-add-cart-product">
-                                                    <div class="product-add-cart">
-                                                        <img src="../images/cart-add-product.png" alt="cart">
-                                                    </div>
-                                                    <div class="add-transition-icon-cart">
-                                                        <img src="../images/add-cart.png" alt="add">
-                                                    </div>
-                                                </div>
-                                            </div>  
-                                            <div class="product-section-option-name">
-                                                <div class="product-id"> id: M0001</div>
-                                                <div class="product-name"> Mèo anh lông ngắn xám đực</div>
-                                                <div class="product-price">15.000.000<sup>đ</sup></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="product-section-option">
-                                        <a href="">
-                                            <div class="product-section-option-img">
-                                                <img src="../images/product.jpg" alt="product">
-                                                <div class="product-gif-new">
-                                                    <img src="../images/gif-new.gif" alt="new">
-                                                </div>
-                                                <div class="hover-add-cart-product">
-                                                    <div class="product-add-cart">
-                                                        <img src="../images/cart-add-product.png" alt="cart">
-                                                    </div>
-                                                    <div class="add-transition-icon-cart">
-                                                        <img src="../images/add-cart.png" alt="add">
-                                                    </div>
-                                                </div>
-                                            </div>  
-                                            <div class="product-section-option-name">
-                                                <div class="product-id"> id: M0001</div>
-                                                <div class="product-name"> Mèo anh lông ngắn xám đực</div>
-                                                <div class="product-price">15.000.000<sup>đ</sup></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="product-section-see-more-over">
-                                        <div class="product-section-see-more">
-                                            <div class="slideshow-see-more-container">
-                                                <div class="slideshow-see-more fade">
-                                                    <img src="../images/slideshow-seemore-1.jpg" alt="anh 1">
-                                                </div>
-                                                <div class="slideshow-see-more fade">
-                                                    <img src="../images/slideshow-seemore-2.jpg" alt="anh 1">
-                                                </div>
-                                                <div class="slideshow-see-more fade">
-                                                    <img src="../images/slideshow-seemore-3.jpg" alt="anh 1">
-                                                </div>
-                                                <div class="slideshow-see-more fade">
-                                                    <img src="../images/slideshow-seemore-4.jpg" alt="anh 1">
-                                                </div>
-                                                <div class="text-slideshow-see-more">Nhấn để xem thêm</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
-               
                 <div class="product-domestic-and-foreign">
                     <div class="product-foreign">
                         <div id="foreign1" class="product-main-option">
@@ -1758,34 +1415,121 @@
                         </div>
                     </div>
                 </div>
+                <div class="product-domestic-and-foreign">
+                    <div class="product-domestic">
+                        <?php
+                            for ($i = 0; $i <2; $i++){
+                                echo    '<div id="domestic'.($i+1).'" class= product-main-option>'
+                        ?>
+                            <div class="content-product-name">
+                                <?php
+                                $sql = "SELECT chung_loai,anh FROM all_product_cat WHERE id_cat ='M".$i."000'";
+                                $result = $conn->query($sql);
+                                $row = $result->fetch_assoc();
+                                if($row['chung_loai'] == 'muop'){
+                                    echo '<h1>Mèo Mướp</h1>';
+                                } else
+                                    echo '<h1>Mèo Vàng</h1>';
+                                ?>
+                            </div>
+                            <div class="product-section">
+                                <div class="product-section-over">
+                                    <?php
+                                        for($j = 0; $j<6; $j++){
+                                            $sql1 = "SELECT id_cat, ten_meo, anh, price FROM all_product_cat WHERE id_cat = 'M".$i."0".$j."0'";
+                                            $result1 = $conn->query($sql1);
+                                            if($result1 && $result1->num_rows >0){
+                                                $row1 = $result1->fetch_assoc();
+                                    ?>
+                                    <div class="product-section-option">
+                                        <a href="../KindOf/KindOf.php">
+                                            <div class="product-section-option-img">
+                                                <?php
+                                                    echo    '<img src="'.$row1['anh'].'" alt="">'
+                                                ?>
+                                                <div class="product-gif-new">
+                                                    <img src="../images/gif-new.gif" alt="new">
+                                                </div>
+                                                <div class="hover-add-cart-product">
+                                                    <div class="product-add-cart">
+                                                        <img src="../images/cart-add-product.png" alt="cart">
+                                                    </div>
+                                                    <div class="add-transition-icon-cart" >
+                                                        <img src="../images/add-cart.png" alt="add">
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                            <div class="product-section-option-name">
+                                                <?php
+                                                    echo    '<div class="product-id"> id: '.$row1['id_cat'].'</div>';
+                                                    echo    '<div class="product-name"> '.$row1['ten_meo'].'</div>';
+                                                    echo    '<div class="product-price">'.number_format($row1['price'],0,",",".").'<sup>đ</sup></div>';
+                                                ?>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <?php
+                                            }
+                                        }
+                                    ?>
+                                    <div class="product-section-see-more-over">
+                                        <div class="product-section-see-more">
+                                            <div class="slideshow-see-more-container">
+                                                <?php
+                                                    for($j=0; $j<4; $j++){
+                                                        $sql1 = "SELECT anh FROM all_product_cat WHERE id_cat = 'M".$i."0".$j."0'";
+                                                        $result1 = $conn->query($sql1);
+                                                        if($result1 && $result1->num_rows >0){
+                                                            $row1 = $result1->fetch_assoc();
+                                                
+                                                        echo    '<div class="slideshow-see-more fade">';
+                                                        echo        '<img src="'.$row1['anh'].'" alt="anh">';
+                                                        echo    '</div>';
+                                                
+                                                        }
+                                                    }
+                                                ?>
+                                                <div class="text-slideshow-see-more">Nhấn để xem thêm</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                                echo '</div>';
+                            }
+                            ?>
+                    </div>
+                </div>
             </div>
+            <!------------------------------------ right ------------------------------------>
             <div class="right-contact">
-                <div class="right-contact-over">
-                    <img src="../images/gif-meo-right.gif" alt="gif-meo-right">
-                    <div class="right-contact-main-over">
-                        <div class="right-contact-main">
-                            <div class="right-email">
-                                <div class="right-text-none-email">
-                                    <div class="text-right-ehz"><a href="mailto:2251120313@ut.edu.vn">Email</a></div>
+                    <div class="right-contact-over">
+                        <img src="../images/gif-meo-right.gif" alt="gif-meo-right">
+                        <div class="right-contact-main-over">
+                            <div class="right-contact-main">
+                                <div class="right-email">
+                                    <div class="right-text-none-email">
+                                        <div class="text-right-ehz"><a href="mailto:2251120313@ut.edu.vn">Email</a></div>
+                                    </div>
+                                    <img src="../images/icon-right-email.png" alt="icon-right-email">
                                 </div>
-                                <img src="../images/icon-right-email.png" alt="icon-right-email">
-                            </div>
-                            <div class="right-hotline">
-                                <div class="right-text-none-hotline">
-                                    <div class="text-right-ehz"><a href="https://zalo.me/0869801744">Hotline</a></div>
+                                <div class="right-hotline">
+                                    <div class="right-text-none-hotline">
+                                        <div class="text-right-ehz"><a href="https://zalo.me/0869801744">Hotline</a></div>
+                                    </div>
+                                    <img src="../images/icon-right-hotline.png" alt="icon-right-hotline">
                                 </div>
-                                <img src="../images/icon-right-hotline.png" alt="icon-right-hotline">
-                            </div>
-                            <div class="right-zalo">
-                                <div class="right-text-none-zalo">
-                                    <div class="text-right-ehz"><a href="https://zalo.me/0869801744">Zalo</a></div>
+                                <div class="right-zalo">
+                                    <div class="right-text-none-zalo">
+                                        <div class="text-right-ehz"><a href="https://zalo.me/0869801744">Zalo</a></div>
+                                    </div>
+                                    <img src="../images/icon-right-zalo.png" alt="icon-right-zalo">
                                 </div>
-                                <img src="../images/icon-right-zalo.png" alt="icon-right-zalo">
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
         
     </section>
