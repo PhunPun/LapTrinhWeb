@@ -39,22 +39,22 @@
       <div class="view-see-other-container">
         <div class="view-other-see-container">
           <div class="view-see-other-over">
-            <div class="view-see-other-img" style="background-image: url(./images/product.jpg);">
+            <div class="view-see-other-img" style="background-image: url(../images/M4000.jpg);">
               <a href="../Homes/Home.html"><p>anh</p></a>
             </div>
-            <div class="view-see-other-img" style="background-image: url(./images/product.jpg);">
+            <div class="view-see-other-img" style="background-image: url(../images/M4010.jpg);">
               <a href="../Homes/Home.html"><p>anh</p></a>
             </div>
-            <div class="view-see-other-img" style="background-image: url(./images/product.jpg);">
+            <div class="view-see-other-img" style="background-image: url(../images/M4020.jpg);">
               <a href="../Homes/Home.html"><p>anh</p></a>
             </div>
-            <div class="view-see-other-img" style="background-image: url(./images/product.jpg);">
+            <div class="view-see-other-img" style="background-image: url(../images/M4030.jpg);">
               <a href="../Homes/Home.html"><p>anh</p></a>
             </div>
-            <div class="view-see-other-img" style="background-image: url(./images/product.jpg);">
+            <div class="view-see-other-img" style="background-image: url(../images/M4040.jpg);">
               <a href="../Homes/Home.html"><p>anh</p></a>
             </div>
-            <div class="view-see-other-img" style="background-image: url(./images/product.jpg);">
+            <div class="view-see-other-img" style="background-image: url(../images/M4050.jpg);">
               <a href="../Homes/Home.html"><p>anh</p></a>
             </div>
           </div>

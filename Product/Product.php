@@ -1,3 +1,10 @@
+<!------------------------------------ ket noi database------------------------------------>
+<?php
+    include "../connect.php";
+    $sql = "SELECT id_cat, ten_meo, price From all_product_cat";
+    $resoult = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -48,13 +55,13 @@
                             <div class="product-menu-domestic-foreign fonrt-Roboto_Slab">Mèo nhập khẩu</div>
                         </a>
                         <ul class="product-subMenu2">
-                            <li><a class="menu-kind fonrt-Roboto_Slab" onclick="scrollSectionToView('foreign1')">Mèo Ai Cập Sphynx</a></li>
-                            <li><a class="menu-kind fonrt-Roboto_Slab" onclick="scrollSectionToView('foreign2')">Mèo Anh lông ngắn</a></li>
-                            <li><a class="menu-kind fonrt-Roboto_Slab" onclick="scrollSectionToView('foreign3')">Mèo Anh lông dài</a></li>
-                            <li><a class="menu-kind fonrt-Roboto_Slab" onclick="scrollSectionToView('foreign4')">Mèo Ba Tư</a></li>
-                            <li><a class="menu-kind fonrt-Roboto_Slab" onclick="scrollSectionToView('foreign5')">Mèo chân ngắn Munchkin</a></li>
-                            <li><a class="menu-kind fonrt-Roboto_Slab" onclick="scrollSectionToView('foreign6')">Mèo Ragdoll</a></li>
-                            <li><a class="menu-kind fonrt-Roboto_Slab" onclick="scrollSectionToView('foreign7')">Mèo tai cụp</a></li>
+                            <li><a class="menu-kind fonrt-Roboto_Slab" onclick="scrollSectionToView('foreign1')">Mèo tai cụp</a></li>
+                            <li><a class="menu-kind fonrt-Roboto_Slab" onclick="scrollSectionToView('foreign2')">Mèo Ai Cập Sphynx</a></li>
+                            <li><a class="menu-kind fonrt-Roboto_Slab" onclick="scrollSectionToView('foreign3')">Mèo Anh lông ngắn</a></li>
+                            <li><a class="menu-kind fonrt-Roboto_Slab" onclick="scrollSectionToView('foreign4')">Mèo Anh lông dài</a></li>
+                            <li><a class="menu-kind fonrt-Roboto_Slab" onclick="scrollSectionToView('foreign5')">Mèo Ba Tư</a></li>
+                            <li><a class="menu-kind fonrt-Roboto_Slab" onclick="scrollSectionToView('foreign6')">Mèo chân ngắn Munchkin</a></li>
+                            <li><a class="menu-kind fonrt-Roboto_Slab" onclick="scrollSectionToView('foreign7')">Mèo Ragdoll</a></li>
                             <li><a class="menu-kind fonrt-Roboto_Slab" onclick="scrollSectionToView('foreign8')">Mèo Xiêm</a></li>
                         </ul>
                     </li>
@@ -118,7 +125,7 @@
                                         </a>
                                     </div>
                                     <div class="product-section-option">
-                                        <a href="">
+                                        <a href="../connect.php">
                                             <div class="product-section-option-img">
                                                 <img src="../Product/images/product.jpg" alt="product">
                                                 <div class="product-gif-new">
