@@ -100,7 +100,7 @@
                     <span>15.000.000</span><sup>đ</sup>
                     <div class="main-right-price-button">
                       <div class="main-price-button-add" onclick="addToCart()">Thêm vào giỏ hàng</div>
-                     <div class="main-price-button-buy" onclick="addToCart()"><a href="../Cart/Cart.html">Mua ngay</a></div>
+                     <div class="main-price-button-buy" onclick="addToCart()"><a href="../Cart/Cart.php">Mua ngay</a></div>
                     </div>                    
                   </div>
                 </div>

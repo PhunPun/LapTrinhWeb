@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../images/icon-title.png" type="image/x-icon">
     <title>Đăng nhập</title>
-    <link rel="stylesheet" href="../Login/styleLogin.css">
-    <script src="../Login/Login.js" defer></script>
+    <link rel="stylesheet" href="./styleLogin.css">
+    <script src="./Login.js" defer></script>
 </head>
 <body>
     <div class="form-container">
@@ -50,6 +49,24 @@
                 <button type="submit">Đăng ký</button>
                 <p class="toggle-form">Bạn đã có tài khoản? <a href="#" id="show-login">Đăng nhập tại đây</a></p>
             </form>
+        </div>
+
+        <!-- Phần hiển thị thông tin người dùng và nút đăng xuất -->
+        <div id="user-info" style="display: none;">
+            <h2>Thông tin người dùng</h2>
+            <div class="input-group">
+                <label for="user-username">Tên đăng nhập</label>
+                <input type="text" id="user-username"  readonly>
+            </div>
+            <div class="input-group">
+                <label for="user-email">Email</label>
+                <input type="email" id="user-email" readonly>
+            </div>
+            <div class="input-group">
+                <label for="user-phone">Số điện thoại</label>
+                <input type="tel" id="user-phone" readonly>
+            </div>
+            <button id="logout-btn">Đăng xuất</button>
         </div>
     </div>
 </body>

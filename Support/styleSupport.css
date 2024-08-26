@@ -13,7 +13,9 @@ form{
     border-radius: 20px;
     background-color: rgba(210, 142, 87, 0.854); 
     color: white;
-    background-image: url('../Login/images/login.gif');
+    background-image: url('./images/background3.jpg');
+    background-position: center;
+    background-size: cover;
 }
 h1{
     font-family: "Roboto Slab", serif;
@@ -45,7 +47,8 @@ button:hover{
     cursor: pointer;
 }
 body{
-    background-color: antiquewhite;
+    background: url('./images/background.jpg');
+    background-size: cover;
     height: 100vh;
     margin: 0;
 }

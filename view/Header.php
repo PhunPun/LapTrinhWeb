@@ -20,7 +20,7 @@
             <span id="user-display" onclick="supportlg()">Đăng Nhập</span>
           </li>
           <li class="other3">
-            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            <a href="../Cart/Cart.php"><i class="fas fa-shopping-cart"></i></a>
           </li>
         </div>
       </div>

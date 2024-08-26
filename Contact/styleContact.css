@@ -10,8 +10,6 @@
     background: url('../Contact/images/contact.png');
     background-size: cover;
     background-position: center;
-    height: 50vh;
-    padding-left: 20px; /* Thêm khoảng cách từ bên trái nếu cần */
     color: white;
     font-family: 'Courier New', Courier, monospace; 
     padding-left: 10px;
@@ -19,7 +17,6 @@
 }
 .design h1>img{
     width: 300px;
-    height: auto;
     padding-top: 50px;
     
 }
