@@ -88,6 +88,7 @@
 }
 .product-section-option-img{
     width: 100%;
+    height: 27vh;
     overflow: hidden;
     position: relative;
     justify-content: center;

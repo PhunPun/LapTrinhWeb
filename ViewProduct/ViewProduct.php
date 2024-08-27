@@ -27,7 +27,7 @@
     <?php
       include "../view/Header.php";
     ?>
->>>>>>> 5610b376c1f11bef44c622a61daf1ea828ca11ac:ViewProduct/ViewProduct.php
+
     <!------------------------------------ section ------------------------------------>
     <section>
       <div class="view-container">
@@ -35,35 +35,34 @@
         <div class="view-main">
             <div class="view-main-over">
                 <div class="view-main-left">
-                    <div class="view-main-left-big-img" style="background-image: url(../ViewProduct/images/view1.jpg);"></div>
+                  <?php
+                    include "../connect.php";
+                    if(isset($_GET['id'])){
+                      $id=$_GET['id'];
+                      $id4 = substr($id,0,4);
+                    }else{
+                      $id="";
+                    }
+                    $sql = "SELECT * FROM all_product_cat WHERE LEFT(id_cat,4) = '$id4'";
+                    $result = $conn->query($sql);
+                    $rows = array();
+                    if($result && $result->num_rows > 0){
+                        while($row = $result->fetch_assoc()){
+                            $rows[] = $row;
+                        }
+                    }
+                  ?>
+                  <?php
+                    echo  '<div class="view-main-left-big-img" style="background-image: url('.$rows[0]['anh'].');"></div>';
+                  ?>
                     <div class="view-main-left-small">
-                        <div class="view-main-left-small-img small-img-active" style="background-image: url(../ViewProduct/images/view1.jpg);">
-                          <div class="small-img-text"></div>
-                        </div>
-                        <div class="view-main-left-small-img" style="background-image: url(../ViewProduct/images/view2.jpg);">
-                          <div class="small-img-text"></div>
-                        </div>
-                        <div class="view-main-left-small-img" style="background-image: url(../ViewProduct/images/view3.jpg);">
-                          <div class="small-img-text"></div>
-                        </div>
-                        <div class="view-main-left-small-img" style="background-image: url(../ViewProduct/images/view4.jpg);">
-                          <div class="small-img-text"></div>
-                        </div>
-                        <div class="view-main-left-small-img" style="background-image: url(../ViewProduct/images/view2.jpg);">
-                          <div class="small-img-text"></div>
-                        </div>
-                        <div class="view-main-left-small-img" style="background-image: url(../ViewProduct/images/view3.jpg);">
-                          <div class="small-img-text"></div>
-                        </div>
-                        <div class="view-main-left-small-img" style="background-image: url(../ViewProduct/images/view4.jpg);">
-                          <div class="small-img-text"></div>
-                        </div>
-                        <div class="view-main-left-small-img" style="background-image: url(../ViewProduct/images/view3.jpg);">
-                          <div class="small-img-text"></div>
-                        </div>
-                        <div class="view-main-left-small-img" style="background-image: url(../ViewProduct/images/view3.jpg);">
-                          <div class="small-img-text"></div>
-                        </div>
+                        <?php
+                          foreach($rows as $row){
+                            echo  '<div class="view-main-left-small-img" style="background-image: url('.$row['anh'].');">';
+                              echo  '<div class="small-img-text"></div>';
+                            echo  '</div>';
+                          }
+                        ?>
                     </div>
                     <div class="view-left-note">Màu sắc thực tế có thể bị lệch 5-10%</div>
                     <button class="view-main-left-prev" onclick="mainLeftPrev()"><i class="fa-solid fa-backward"></i></button>
@@ -71,18 +70,20 @@
                 </div>
                 <div class="view-main-right">
                     <div class="main-right-name">
-                      Mèo Anh lông ngắn
-                      <div class="main-right-name-id">M0001</div>
+                      <?php
+                        echo  $rows[0]['ten_meo'];
+                      ?>
+                      <div class="main-right-name-id"><?php echo   $rows[0]['id_cat'] ?></div>
                     </div>
                     <div class="main-right-information">
                       <div class="main-right-infor-head">
                         Thông tin
                       </div>
                       <div class="main-right-infor-body">
-                        <div> <i class="fa-solid fa-circle"></i> <span class="span1">Tuổi:</span> <span class="infor-body-age"> 8 tuần tuổi</span></div>
-                        <div> <i class="fa-solid fa-circle"></i> <span class="span1">Cân nặng:</span> <span class="infor-body-age"> 500 gam</span></div>
-                        <div> <i class="fa-solid fa-circle"></i> <span class="span1">Giống:</span> <span class="infor-body-age"> Đực</span></div>
-                        <div> <i class="fa-solid fa-circle"></i> <span class="span1">Nguồn gốc:</span> <span class="infor-body-age">Nhập khẩu từ Anh</span></div>
+                        <div> <i class="fa-solid fa-circle"></i> <span class="span1">Tuổi:</span> <span class="infor-body-age"> <?php echo $rows[0]['tuoi'] ?></span></div>
+                        <div> <i class="fa-solid fa-circle"></i> <span class="span1">Cân nặng:</span> <span class="infor-body-age"> <?php echo $rows[0]['can_nang'].' kg' ?></span></div>
+                        <div> <i class="fa-solid fa-circle"></i> <span class="span1">Giống:</span> <span class="infor-body-age"> <?php if($rows[0]['sex'] == 0){echo 'Cái';}else{echo 'Đực';} ?></span></div>
+                        <div> <i class="fa-solid fa-circle"></i> <span class="span1">Nguồn gốc:</span> <span class="infor-body-age"><?php echo $rows[0]['nguon_goc'] ?></span></div>
                       </div>
                     </div>
                     <div class="main-right-vaccin">
@@ -97,7 +98,7 @@
                       </div>
                   </div>
                   <div class="main-right-price">
-                    <span>15.000.000</span><sup>đ</sup>
+                    <span><?php echo number_format($rows[0]['price'],0,",",".") ?></span><sup>đ</sup>
                     <div class="main-right-price-button">
                       <div class="main-price-button-add" onclick="addToCart()">Thêm vào giỏ hàng</div>
                      <div class="main-price-button-buy" onclick="addToCart()"><a href="../Cart/Cart.php">Mua ngay</a></div>

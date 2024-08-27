@@ -40,22 +40,22 @@
         <div class="view-other-see-container">
           <div class="view-see-other-over">
             <div class="view-see-other-img" style="background-image: url(../images/M4000.jpg);">
-              <a href="../Homes/Home.html"><p>anh</p></a>
+              <a href="../KindOf/KindOf.php?type=Anh%20Lông%20Ngắn"><p>Anh lông ngắn</p></a>
             </div>
             <div class="view-see-other-img" style="background-image: url(../images/M4010.jpg);">
-              <a href="../Homes/Home.html"><p>anh</p></a>
+              <a href="../KindOf/KindOf.php?type=Anh%20Lông%20Dài"><p>Anh lông dài</p></a>
             </div>
             <div class="view-see-other-img" style="background-image: url(../images/M4020.jpg);">
-              <a href="../Homes/Home.html"><p>anh</p></a>
+              <a href="../KindOf/KindOf.php?type=tai_cup"><p>Tai cụp</p></a>
             </div>
             <div class="view-see-other-img" style="background-image: url(../images/M4030.jpg);">
-              <a href="../Homes/Home.html"><p>anh</p></a>
+              <a href="../KindOf/KindOf.php?type=Chân%20Ngắn%20Munchkyn"><p>Chân ngắn</p></a>
             </div>
             <div class="view-see-other-img" style="background-image: url(../images/M4040.jpg);">
-              <a href="../Homes/Home.html"><p>anh</p></a>
+              <a href="../KindOf/KindOf.php?type=muop"><p>Mướp</p></a>
             </div>
             <div class="view-see-other-img" style="background-image: url(../images/M4050.jpg);">
-              <a href="../Homes/Home.html"><p>anh</p></a>
+              <a href="../KindOf/KindOf.php?type=vang"><p>Vàng</p></a>
             </div>
           </div>
             <button class="view-see-other-arrows-prev" onclick="seeOtherPrev()"><i class="fa-solid fa-circle-chevron-left"></i></button>
@@ -79,7 +79,7 @@
               cả hình ảnh, giá cả, và thông tin về cách chăm sóc đều được
               <b>Mèo Mellow</b> đầy đủ và chính xác nhất.
             </p>
-            <a href="../Introduce/Introduce.html"><button>Chi tiết</button></a>
+            <a href="../Introduce/Introduce.php"><button>Chi tiết</button></a>
           </div>
         </div>
         <div class="about-img">
