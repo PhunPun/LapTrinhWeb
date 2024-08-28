@@ -1,3 +1,20 @@
+<?php
+  include "../connect.php";
+  if(isset($_GET['id'])){
+    $id=$_GET['id'];
+    $id4 = substr($id,0,4);
+  }else{
+    $id="";
+  }
+  $sql = "SELECT * FROM all_product_cat WHERE LEFT(id_cat,4) = '$id4'";
+  $result = $conn->query($sql);
+  $rows = array();
+  if($result && $result->num_rows > 0){
+      while($row = $result->fetch_assoc()){
+          $rows[] = $row;
+      }
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -35,30 +52,17 @@
         <div class="view-main">
             <div class="view-main-over">
                 <div class="view-main-left">
-                  <?php
-                    include "../connect.php";
-                    if(isset($_GET['id'])){
-                      $id=$_GET['id'];
-                      $id4 = substr($id,0,4);
-                    }else{
-                      $id="";
-                    }
-                    $sql = "SELECT * FROM all_product_cat WHERE LEFT(id_cat,4) = '$id4'";
-                    $result = $conn->query($sql);
-                    $rows = array();
-                    if($result && $result->num_rows > 0){
-                        while($row = $result->fetch_assoc()){
-                            $rows[] = $row;
-                        }
-                    }
-                  ?>
+                  
                   <?php
                     echo  '<div class="view-main-left-big-img" style="background-image: url('.$rows[0]['anh'].');"></div>';
                   ?>
                     <div class="view-main-left-small">
                         <?php
+                          $first = true;
                           foreach($rows as $row){
-                            echo  '<div class="view-main-left-small-img" style="background-image: url('.$row['anh'].');">';
+                            $class = $first ? 'view-main-left-small-img small-img-active' : 'view-main-left-small-img';
+                            $first = false;
+                            echo  '<div class="'.$class.'" style="background-image: url('.$row['anh'].');">';
                               echo  '<div class="small-img-text"></div>';
                             echo  '</div>';
                           }
@@ -91,10 +95,38 @@
                         Tình trạng tiêm phòng
                       </div>
                       <div class="main-right-vacin-body">
-                        <div> <i class="fa-regular fa-circle-check"></i> <span class="infor-body-vaccin-1"> Vaccin 4 bệnh</span></div>
-                        <div> <i class="fa-regular fa-circle-check"></i> <span class="infor-body-vaccin-2"> Vaccin dại</span></div>
-                        <div> <i class="fa-regular fa-circle-check"></i> <span class="infor-body-vaccin-3"> Vaccin viêm phúc mạc</span></div>
-                        <div> <i class="fa-regular fa-circle-check"></i> <span class="infor-body-vaccin-4"> Tẩy giun</span></div>
+                        <?php
+                            if($rows[0]['vaccin_4_benh'] == 0){
+                              echo '<div><i class="fa-regular fa-circle-xmark" style="color: red"></i> <span class="infor-body-vaccin-1"> Vaccin 4 bệnh</span></div>';
+                            }
+                            else{
+                              echo '<div> <i class="fa-regular fa-circle-check" style="color: rgb(10, 204, 10);"></i> <span class="infor-body-vaccin-1"> Vaccin 4 bệnh</span></div>';
+                            }
+                        ?>
+                        <?php
+                            if($rows[0]['vaccin_4_benh'] == 0){
+                              echo '<div><i class="fa-regular fa-circle-xmark" style="color: red"></i> <span class="infor-body-vaccin-2"> Vaccin dại</span></div>';
+                            }
+                            else{
+                              echo '<div> <i class="fa-regular fa-circle-check" style="color: rgb(10, 204, 10);"></i> <span class="infor-body-vaccin-2"> Vaccin dại</span></div>';
+                            }
+                        ?>
+                        <?php
+                            if($rows[0]['vaccin_4_benh'] == 0){
+                              echo '<div><i class="fa-regular fa-circle-xmark" style="color: red"></i> <span class="infor-body-vaccin-3"> Vaccin viêm phúc mạc</span></div>';
+                            }
+                            else{
+                              echo '<div> <i class="fa-regular fa-circle-check" style="color: rgb(10, 204, 10);"></i> <span class="infor-body-vaccin-3"> Vaccin viêm phúc mạc</span></div>';
+                            }
+                        ?>
+                        <?php
+                            if($rows[0]['vaccin_4_benh'] == 0){
+                              echo '<div><i class="fa-regular fa-circle-xmark" style="color: red"></i> <span class="infor-body-vaccin-4"> Tẩy giun</span></div>';
+                            }
+                            else{
+                              echo '<div> <i class="fa-regular fa-circle-check" style="color: rgb(10, 204, 10);"></i> <span class="infor-body-vaccin-4"> Tẩy giun</span></div>';
+                            }
+                        ?>
                       </div>
                   </div>
                   <div class="main-right-price">
@@ -113,35 +145,55 @@
         <div class="character-text-head">
           <p>đặt điểm giống mèo:</p>
         </div>
-        <div class="character-text-name">Anh lông ngắn</div>
-        <div class="view-character-container">
-          <div class="character-img" style="background-image: url(../images/characterBaTu.png);">
-          </div>
-        </div>
+        <?php
+          echo  '<div class="character-text-name">';
+                if($rows[0]['chung_loai'] == 'muop'){
+                  echo  'Mướp';
+                }elseif($rows[0]['chung_loai'] == 'vang'){
+                  echo  'Vàng';
+                }elseif($rows[0]['chung_loai'] == 'tai_cup'){
+                  echo  'Tai Cụp';
+                }else{
+                  echo  $rows[0]['chung_loai'];
+                }
+          echo  '</div>'
+        ?>
+        <?php
+          $char = substr($rows[0]['id_cat'],0,2);
+          echo  '<div class="view-character-container">';
+          echo    '<div class="character-img" style="background-image: url(../images/character'.$char.'.png);">';
+          echo    '</div>';
+          echo  '</div>';
+        ?>
+        
       </div>
       <!------------------------------------ các bé mèo khác ------------------------------------>
       <div class="view-see-other-text">Xem thêm các bé khác:</div>
       <div class="view-see-other-container">
         <div class="view-other-see-container">
           <div class="view-see-other-over">
-            <div class="view-see-other-img" style="background-image: url(./images/view1.jpg);">
-              <a href="../Homes/Home.html"></a>
-            </div>
-            <div class="view-see-other-img" style="background-image: url(./images/view2.jpg);">
-              <a href="../Homes/Home.html"></a>
-            </div>
-            <div class="view-see-other-img" style="background-image: url(./images/view3.jpg);">
-              <a href="../Homes/Home.html"></a>
-            </div>
-            <div class="view-see-other-img" style="background-image: url(./images/view4.jpg);">
-              <a href="../Homes/Home.html"></a>
-            </div>
-            <div class="view-see-other-img" style="background-image: url(./images/view2.jpg);">
-              <a href="../Homes/Home.html"></a>
-            </div>
-            <div class="view-see-other-img" style="background-image: url(./images/view3.jpg);">
-              <a href="../Homes/Home.html"></a>
-            </div>
+            <?php
+            if(isset($_GET['id'])){
+              $id=$_GET['id'];
+              $id2 = substr($id,0,2);
+            }else{
+              $id="";
+            }
+            $sqlother = "SELECT * FROM all_product_cat WHERE LEFT(id_cat,2) = '$id2' and CAST(SUBSTRING(id_cat,4) AS UNSIGNED) %10 = 0";
+            $resultother = $conn->query($sqlother);
+            $rowsother = array();
+            if($resultother && $resultother->num_rows > 0){
+                while($rowother = $resultother->fetch_assoc()){
+                    $rowsother[] = $rowother;
+                }
+            }
+            foreach($rowsother as $rowother){
+              echo  '<div class="view-see-other-img" style="background-image: url('.$rowother['anh'].');">';
+              echo  '<a href="../ViewProduct/ViewProduct.php?id='.$rowother['id_cat'].'"></a>';
+              echo  '</div>';
+            }
+            ?>
+
           </div>
             <button class="view-see-other-arrows-prev" onclick="seeOtherPrev()"><i class="fa-solid fa-circle-chevron-left"></i></button>
             <button class="view-see-other-arrows-next" onclick="seeOtherNext()"><i class="fa-solid fa-circle-chevron-right"></i></button>

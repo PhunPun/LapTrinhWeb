@@ -39,24 +39,36 @@
       <div class="view-see-other-container">
         <div class="view-other-see-container">
           <div class="view-see-other-over">
-            <div class="view-see-other-img" style="background-image: url(../images/M4000.jpg);">
-              <a href="../KindOf/KindOf.php?type=Anh%20Lông%20Ngắn"><p>Anh lông ngắn</p></a>
-            </div>
-            <div class="view-see-other-img" style="background-image: url(../images/M4010.jpg);">
-              <a href="../KindOf/KindOf.php?type=Anh%20Lông%20Dài"><p>Anh lông dài</p></a>
-            </div>
-            <div class="view-see-other-img" style="background-image: url(../images/M4020.jpg);">
-              <a href="../KindOf/KindOf.php?type=tai_cup"><p>Tai cụp</p></a>
-            </div>
-            <div class="view-see-other-img" style="background-image: url(../images/M4030.jpg);">
-              <a href="../KindOf/KindOf.php?type=Chân%20Ngắn%20Munchkyn"><p>Chân ngắn</p></a>
-            </div>
-            <div class="view-see-other-img" style="background-image: url(../images/M4040.jpg);">
-              <a href="../KindOf/KindOf.php?type=muop"><p>Mướp</p></a>
-            </div>
-            <div class="view-see-other-img" style="background-image: url(../images/M4050.jpg);">
-              <a href="../KindOf/KindOf.php?type=vang"><p>Vàng</p></a>
-            </div>
+            <?php
+              include "../connect.php";
+              $sql = "SELECT ten_meo, anh, chung_loai FROM all_product_cat WHERE CAST(SUBSTRING(id_cat,2) AS UNSIGNED) % 1000 = 0";
+              $result = $conn->query($sql);
+              $rows = array();
+              if($result && $result->num_rows > 0){
+                while($row = $result->fetch_assoc()){
+                  $rows[] = $row;
+                }
+              }
+            ?>
+            <?php
+              foreach($rows as $row){
+                echo  '<div class="view-see-other-img" style="background-image: url('.$row['anh'].');">';
+                echo    '<a href="../KindOf/KindOf.php?type='.$row['chung_loai'].'"><p>';
+                    if($row['chung_loai'] == 'muop'){
+                      echo  'Mèo Mướp';
+                    }elseif($row['chung_loai'] == 'vang'){
+                      echo  'Mèo Vàng';
+                    }elseif($row['chung_loai']== 'tai_cup'){
+                      echo  'Mèo Tai Cụp';
+                    }else{
+                      echo  'Mèo '.$row['chung_loai'];
+                    }
+                echo  '</p></a>';
+                echo  '</div>';
+              }
+            ?>
+
+           
           </div>
             <button class="view-see-other-arrows-prev" onclick="seeOtherPrev()"><i class="fa-solid fa-circle-chevron-left"></i></button>
             <button class="view-see-other-arrows-next" onclick="seeOtherNext()"><i class="fa-solid fa-circle-chevron-right"></i></button>

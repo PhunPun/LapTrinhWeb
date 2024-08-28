@@ -136,10 +136,20 @@
                         ?>
                     </div>
                 </div>
-            </div> <!-- Thẻ div thiếu được đóng ở đây -->
+            </div> 
         </div>
+            <div class="kind-can-you-like-container">
+                <div class="kind-can-you-like-over">
+                    <div class="kind-can-you-like-heard">
+                        <img src="../KindOf/images/kind-can-you-like.png" alt="kind-can-you-like">
+                        <div class="kind-can-you-like-heard-text">
+                            Có thể bạn cũng thích:
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
-</div>
+        </div>
             <div class="right-contact">
                 <div class="right-contact-over">
                     <img src="../images/gif-meo-right.gif" alt="gif-meo-right">
@@ -172,83 +182,42 @@
         <div class="home-carousel-container">
             <div class="home-carousel">
               <div class="home-carousel-list">
-                <div class="home-carousel-item" style="background-image: url(../ViewProduct/images/view1.jpg);">
-                  <div class="caroucel-content">
-                    <div class="caroucel-title">Slider</div>
-                    <div class="caroucel-name">Meoww</div>
-                    <div class="caroucel-des">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil numquam vero libero quidem quas? Reiciendis minima blanditiis voluptate minus commodi. Mollitia quam recusandae laborum veniam repellat eaque. Ad, ullam eligendi!</div>
-                    <div class="caroucel-btn">
-                      <button>See more</button>
-                      <button>Tất cả</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="home-carousel-item" style="background-image: url(../ViewProduct/images/view2.jpg);">
-                  <div class="caroucel-content">
-                    <div class="caroucel-title">Slider</div>
-                    <div class="caroucel-name">Meoww</div>
-                    <div class="caroucel-des">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil numquam vero libero quidem quas? Reiciendis minima blanditiis voluptate minus commodi. Mollitia quam recusandae laborum veniam repellat eaque. Ad, ullam eligendi!</div>
-                    <div class="caroucel-btn">
-                      <button>See more</button>
-                      <button>Tất cả</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="home-carousel-item" style="background-image: url(../ViewProduct/images/view3.jpg);">
-                  <div class="caroucel-content">
-                    <div class="caroucel-title">Slider</div>
-                    <div class="caroucel-name">Meoww</div>
-                    <div class="caroucel-des">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil numquam vero libero quidem quas? Reiciendis minima blanditiis voluptate minus commodi. Mollitia quam recusandae laborum veniam repellat eaque. Ad, ullam eligendi!</div>
-                    <div class="caroucel-btn">
-                      <button>See more</button>
-                      <button>Tất cả</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="home-carousel-item" style="background-image: url(../ViewProduct/images/view4.jpg);">
-                  <div class="caroucel-content">
-                    <div class="caroucel-title">Slider</div>
-                    <div class="caroucel-name">Meoww</div>
-                    <div class="caroucel-des">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil numquam vero libero quidem quas? Reiciendis minima blanditiis voluptate minus commodi. Mollitia quam recusandae laborum veniam repellat eaque. Ad, ullam eligendi!</div>
-                    <div class="caroucel-btn">
-                      <button>See more</button>
-                      <button>Tất cả</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="home-carousel-item" style="background-image: url(../ViewProduct/images/view2.jpg);">
-                  <div class="caroucel-content">
-                    <div class="caroucel-title">Slider</div>
-                    <div class="caroucel-name">Meoww</div>
-                    <div class="caroucel-des">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil numquam vero libero quidem quas? Reiciendis minima blanditiis voluptate minus commodi. Mollitia quam recusandae laborum veniam repellat eaque. Ad, ullam eligendi!</div>
-                    <div class="caroucel-btn">
-                      <button>See more</button>
-                      <button>Tất cả</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="home-carousel-item" style="background-image: url(../ViewProduct/images/view3.jpg);">
-                  <div class="caroucel-content">
-                    <div class="caroucel-title">Slider</div>
-                    <div class="caroucel-name">Meoww</div>
-                    <div class="caroucel-des">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil numquam vero libero quidem quas? Reiciendis minima blanditiis voluptate minus commodi. Mollitia quam recusandae laborum veniam repellat eaque. Ad, ullam eligendi!</div>
-                    <div class="caroucel-btn">
-                      <button>See more</button>
-                      <button>Tất cả</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="home-carousel-item" style="background-image: url(../ViewProduct/images/view1.jpg);">
-                  <div class="caroucel-content">
-                    <div class="caroucel-title">Slider</div>
-                    <div class="caroucel-name">Meoww</div>
-                    <div class="caroucel-des">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil numquam vero libero quidem quas? Reiciendis minima blanditiis voluptate minus commodi. Mollitia quam recusandae laborum veniam repellat eaque. Ad, ullam eligendi!</div>
-                    <div class="caroucel-btn">
-                      <button>See more</button>
-                      <button>Tất cả</button>
-                    </div>
-                  </div>
-                </div>
+                <?php
+                    $sqlcat="SELECT chung_loai, anh FROM all_product_cat WHERE CAST(SUBSTRING(id_cat,2) AS UNSIGNED)%1000 = 0";
+                    $resultcat = $conn->query($sqlcat);
+                    $rowscat= array();
+                    if($resultcat && $resultcat->num_rows > 0){
+                        while($rowcat = $resultcat->fetch_assoc()){
+                            $rowscat[] = $rowcat;
+                        }
+                    }
+                ?>
+                <?php
+                    foreach($rowscat as $rowcat){
+                        if($rowcat['chung_loai'] != $loai){
+                                echo    '<div class="home-carousel-item" style="background-image: url('.$rowcat['anh'].');">';
+                                echo    '<div class="caroucel-content">';
+                                echo        '<div class="caroucel-title">Mèo</div>';
+                                echo        '<div class="caroucel-name">';
+                                                if($rowcat['chung_loai']== 'muop'){
+                                                    echo    'Mướp';
+                                                }elseif($rowcat['chung_loai']== 'vang'){
+                                                    echo    'Vàng';
+                                                }elseif($rowcat['chung_loai']== 'tai_cup'){
+                                                    echo    'Tai Cụp';
+                                                }else{
+                                                    echo    $rowcat['chung_loai'];
+                                                }
+                                echo        '</div>';
+                                echo        '<div class="caroucel-btn">';
+                                echo        '<button><a href="../KindOf/KindOf.php?type='.$rowcat['chung_loai'].'">Xem ngay</a></button>';
+                                echo        '</div>';
+                                echo    '</div>';
+                                echo    '</div>';
+                        }
+                        
+                    }
+                ?>
               </div>
               <div class="home-carousel-arrows">
                 <button class="home-carousel-arrows-prev"><<</button>
