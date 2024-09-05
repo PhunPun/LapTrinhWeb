@@ -112,6 +112,9 @@ window.onload = () => {
             alert("Đăng ký thành công! Vui lòng đăng nhập.");
             loginBox.style.display = 'block';
             registerBox.style.display = 'none';
+
+            // lưu vào sql
+            
         });
     }
     

@@ -3,7 +3,7 @@
       <div class="home-footer-over">
         <div class="home-footer-colum">
           <div class="home-footer-colum-about">
-            <a href="../Homes/Home.php"
+            <a href="../admin/admin.php"
               ><img src="../images/logo.png" alt="logo"
             /></a>
             <p class="fonrt-Roboto_Slab">
