@@ -49,7 +49,7 @@
                 <ul class="product-subMenu1">
                     <li>
                         <ul class="product-subMenu2">
-                            <li><a class="menu-kind fonrt-Roboto_Slab  product-active-menu" onclick="loadIframe('#',this)">Thống kê</a></li>
+                            <li><a class="menu-kind fonrt-Roboto_Slab  product-active-menu" onclick="loadIframe('../manage/manage.php',this)">Thống kê</a></li>
                             <li><a class="menu-kind fonrt-Roboto_Slab" onclick="choose(this)">Quản lí sản phẩm</a>
                                 <ul class="product-subMenu3 manage_product">
                                 <li><a class="menu-kind1 fonrt-Roboto_Slab" onclick="loadIframe('#',this)">Danh sách sản phẩm</a></li>
@@ -67,7 +67,7 @@
             <div class="product-main-option-over">
               <div class="space">
               </div>
-                <iframe id="content_iframe" src="../Homes/Home.php" width="100%" height="100%" frameborder="0"  allowfullscreen></iframe>
+                <iframe id="content_iframe" src="../Homes/Home.php" width="99%" height="100%" frameborder="0"  allowfullscreen></iframe>
             </div>
         </div>
     </section>
