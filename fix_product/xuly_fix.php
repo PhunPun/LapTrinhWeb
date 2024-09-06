@@ -36,12 +36,24 @@ if (isset($_FILES['anh']) && $_FILES['anh']['error'] == UPLOAD_ERR_OK) {
             $tay_giun = $_POST['tay_giun'];
 
             // Chuẩn bị câu lệnh SQL
-            $sql = "INSERT INTO all_product_cat (id_cat, chung_loai, ten_meo, anh, price, tuoi, can_nang, sex, nguon_goc, vaccin_4_benh, vaccin_dai, vaccin_phuc_mac, tay_giun)
-            VALUES ('$id_cat', '$chung_loai', '$ten_meo', '$anh', $price, '$tuoi', $can_nang, $sex, '$nguon_goc', $vaccin_4_benh, $vaccin_dai, $vaccin_phuc_mac, $tay_giun)";
+            $sql = "UPDATE all_product_cat SET
+                chung_loai = '$chung_loai',
+                ten_meo = '$ten_meo',
+                anh = '$anh',
+                price = $price,
+                tuoi = '$tuoi',
+                can_nang = $can_nang,
+                sex = $sex,
+                nguon_goc = '$nguon_goc',
+                vaccin_4_benh = $vaccin_4_benh,
+                vaccin_dai = $vaccin_dai,
+                vaccin_phuc_mac = $vaccin_phuc_mac,
+                tay_giun = $tay_giun
+            WHERE id_cat = '$id_cat'";
 
             // Thực thi câu lệnh SQL và kiểm tra kết quả
             if ($conn->query($sql) === TRUE) {
-                echo "Sản phẩm đã được thêm thành công!<br>";
+                echo "Sản phẩm đã được cập nhật thành công!<br>";
 
                 // Xử lý ảnh bổ sung
                 if (isset($_FILES['additional_images']) && $_FILES['additional_images']['error'][0] == UPLOAD_ERR_OK) {

@@ -1,4 +1,5 @@
 <?php
+ob_start(); // Bắt đầu output buffering
 include "../connect.php";
 ?>
 <!DOCTYPE html>
@@ -8,6 +9,10 @@ include "../connect.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danh sách sản phẩm</title>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -40,27 +45,23 @@ include "../connect.php";
             z-index: 100;
         }
 
-        /* Đảm bảo các hàng có chiều cao bằng nhau */
         table td {
             height: 150px;
             background-color: #fff;
-            vertical-align: middle; /* Đảm bảo nội dung nằm giữa */
+            vertical-align: middle;
         }
 
-        /* Màu nền xen kẽ cho các hàng */
         tr:nth-child(even) td {
-            background-color: #f9f9f9;
+            background-color: rgba(210, 142, 87, 0.300);
         }
 
-        /* Style cho ảnh để không bị méo */
         img {
             width: 100px;
             height: 100px;
-            object-fit: cover; /* Đảm bảo ảnh không bị méo */
+            object-fit: cover;
             border-radius: 5px;
         }
 
-        /* Style cho nút hành động */
         .actions form {
             display: inline-block;
         }
@@ -89,7 +90,6 @@ include "../connect.php";
             background-color: #1976D2;
         }
 
-        /* Responsive styling */
         @media (max-width: 768px) {
             table, thead, tbody, th, td, tr {
                 display: block;
@@ -138,15 +138,99 @@ include "../connect.php";
             td:nth-of-type(14):before { content: "Trạng Thái"; }
             td:nth-of-type(15):before { content: "Hành Động"; }
         }
+
+        #backToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 0;
+            z-index: 1000;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            transition: opacity 0.3s;
+        }
+
+        #backToTopBtn:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
 
 <h1>Danh sách sản phẩm</h1>
-
 <?php
+// Xử lý việc xóa sản phẩm
+if (isset($_POST['delete_cat'])) {
+    $id_cat = $_POST['delete_cat'];
+    $sql = "DELETE FROM all_product_cat WHERE id_cat = ?";
+    
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $id_cat);
+    if ($stmt->execute()) {
+        // Xóa thành công, làm mới trang
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit;
+    } else {
+        echo "Xóa thất bại: " . $stmt->error;
+    }
+    $stmt->close();
+}
+
+// Xử lý việc thay đổi trạng thái ẩn/hiện
+if (isset($_POST['toggle_cat'])) {
+    $id_cat = $_POST['toggle_cat'];
+    
+    // Lấy trạng thái hiện tại của sản phẩm
+    $sql_get = "SELECT an_hien FROM all_product_cat WHERE id_cat = ?";
+    $stmt_get = $conn->prepare($sql_get);
+    $stmt_get->bind_param("s", $id_cat);
+    $stmt_get->execute();
+    $result_get = $stmt_get->get_result();
+
+    // Kiểm tra nếu có dữ liệu trả về
+    if ($result_get->num_rows > 0) {
+        $row = $result_get->fetch_assoc();
+        $new_visibility = ($row['an_hien'] == '1') ? '0' : '1'; // Đổi trạng thái
+
+        // Cập nhật trạng thái
+        $sql_update = "UPDATE all_product_cat SET an_hien = ? WHERE id_cat = ?";
+        $stmt_update = $conn->prepare($sql_update);
+        $stmt_update->bind_param("ss", $new_visibility, $id_cat);
+
+        if ($stmt_update->execute()) {
+            // Cập nhật thành công, làm mới trang
+            header("Location: " . $_SERVER['PHP_SELF']);
+            exit;
+        } else {
+            echo "Cập nhật trạng thái thất bại: " . $stmt_update->error;
+        }
+
+        $stmt_update->close();
+    } else {
+        echo "Không tìm thấy sản phẩm với ID này.";
+    }
+
+    $stmt_get->close();
+}
+
 // Truy vấn toàn bộ sản phẩm
-$sql = "SELECT * FROM all_product_cat";
+if (isset($_POST['filter_chung_loai'])) {
+    $filter_chung_loai = $conn->real_escape_string($_POST['filter_chung_loai']);
+    if ($filter_chung_loai == '*') {
+        $sql = "SELECT * FROM all_product_cat WHERE CAST(SUBSTRING(id_cat,2) AS UNSIGNED) % 10 = 0";
+    } else {
+        $sql = "SELECT * FROM all_product_cat WHERE CAST(SUBSTRING(id_cat,2) AS UNSIGNED) % 10 = 0 AND chung_loai = '$filter_chung_loai'";
+    }
+} else {
+    $sql = "SELECT * FROM all_product_cat WHERE CAST(SUBSTRING(id_cat,2) AS UNSIGNED) % 10 = 0";
+}
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -154,7 +238,24 @@ if ($result->num_rows > 0) {
     <thead>
     <tr>
         <th>ID</th>
-        <th>Chủng Loại</th>
+        "?>
+
+        <th>
+            <form action="" method="post">
+                <label for="filter_chung_loai">Chủng loại</label>
+                <select name="filter_chung_loai" id="filter_chung_loai" onchange="this.form.submit()">
+                    <option value="*" <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == '*') ? 'selected' : ''; ?>>Tất cả</option>
+                    <option value="muop" <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'muop') ? 'selected' : ''; ?>>Mèo Mướp</option>
+                    <option value="vang" <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'vang') ? 'selected' : ''; ?>>Mèo Vàng</option>
+                    <option value="tai_cup" <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'tai_cup') ? 'selected' : ''; ?>>Mèo tai cụp</option>
+                    <option value="Xiêm" <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'Xiêm') ? 'selected' : ''; ?>>Mèo Xiêm</option>
+                    <!-- Thêm các giống mèo khác tùy ý -->
+                </select>
+            </form>                 
+
+        </th>
+        <?php
+        echo "
         <th>Tên Mèo</th>
         <th>Ảnh</th>
         <th>Giá</th>
@@ -172,41 +273,69 @@ if ($result->num_rows > 0) {
     </thead>
     <tbody>";
     
-    while($row = $result->fetch_assoc()) {
+    while ($row = $result->fetch_assoc()) {
         echo "<tr>
-            <td>" . $row['id_cat'] . "</td>
-            <td>" . $row['chung_loai'] . "</td>
-            <td>" . $row['ten_meo'] . "</td>
-            <td><img src='" . $row['anh'] . "' alt='Ảnh sản phẩm'></td>
-            <td>" . $row['price'] . "</td>
-            <td>" . $row['tuoi'] . "</td>
-            <td>" . $row['can_nang'] . "</td>
+            <td>" . htmlspecialchars($row['id_cat']) . "</td>
+            <td>" . htmlspecialchars($row['chung_loai']) . "</td>
+            <td>" . htmlspecialchars($row['ten_meo']) . "</td>
+            <td><img src='" . htmlspecialchars($row['anh']) . "' alt='Ảnh sản phẩm'></td>
+            <td>" . htmlspecialchars($row['price']) . "</td>
+            <td>" . htmlspecialchars($row['tuoi']) . "</td>
+            <td>" . htmlspecialchars($row['can_nang']) . "</td>
             <td>" . ($row['sex'] == 1 ? 'Đực' : 'Cái') . "</td>
-            <td>" . $row['nguon_goc'] . "</td>
+            <td>" . htmlspecialchars($row['nguon_goc']) . "</td>
             <td>" . ($row['vaccin_4_benh'] == 1 ? 'Có' : 'Không') . "</td>
             <td>" . ($row['vaccin_dai'] == 1 ? 'Có' : 'Không') . "</td>
             <td>" . ($row['vaccin_phuc_mac'] == 1 ? 'Có' : 'Không') . "</td>
             <td>" . ($row['tay_giun'] == 1 ? 'Có' : 'Không') . "</td>
             <td>" . ($row['an_hien'] == '1' ? 'Hiện' : 'Ẩn') . "</td>
             <td class='actions'>
-                <form action='../manage/delete_product.php' method='post'>
-                    <input type='hidden' name='id_cat' value='" . $row['id_cat'] . "'>
+                <form action='' method='post'>
+                    <input type='hidden' name='delete_cat' value='" . htmlspecialchars($row['id_cat']) . "'>
                     <input type='submit' value='Xóa'>
                 </form>
-                <form action='../manage/toggle_visibility.php' method='post'>
-                    <input type='hidden' name='id_cat' value='" . $row['id_cat'] . "'>
+                <form action='../fix_product/fix_product.php' method='post'>
+                    <input type='hidden' name='fix_cat' value='" . htmlspecialchars($row['id_cat']) . "'>
+                    <input type='submit' value='Sửa'>
+                </form>
+                <form action='' method='post'>
+                    <input type='hidden' name='toggle_cat' value='" . htmlspecialchars($row['id_cat']) . "'>
                     <input type='submit' value='" . ($row['an_hien'] == '1' ? 'Ẩn' : 'Hiện') . "'>
                 </form>
             </td>
         </tr>";
     }
+
     echo "</tbody></table>";
 } else {
     echo "<p>Không có sản phẩm nào.</p>";
 }
 
-$conn->close();
+$conn->close(); // Đóng kết nối cơ sở dữ liệu
+ob_end_flush(); // Kết thúc output buffering và gửi nội dung đến trình duyệt
 ?>
+<button id="backToTopBtn" title="Quay lại đầu trang">^</button>
+<script>
+    // Lấy phần tử nút
+    var backToTopBtn = document.getElementById("backToTopBtn");
 
+    // Hiển thị nút khi người dùng cuộn xuống 200px từ đầu trang
+    window.onscroll = function() {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            backToTopBtn.style.display = "block";
+        } else {
+            backToTopBtn.style.display = "none";
+        }
+    }
+
+    // Khi nhấn vào nút, cuộn trở lại đầu trang
+    backToTopBtn.onclick = function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+</script>
 </body>
 </html>
