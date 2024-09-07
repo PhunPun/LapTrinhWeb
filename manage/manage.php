@@ -35,6 +35,7 @@ include "../connect.php";
             padding: 10px;
             text-align: center;
             border: 1px solid #ccc;
+            width: 6.25%;
         }
 
         table th {
@@ -160,6 +161,9 @@ include "../connect.php";
         #backToTopBtn:hover {
             background-color: #45a049;
         }
+        #filter_chung_loai{
+            width: 60px;
+        }
     </style>
 </head>
 <body>
@@ -245,11 +249,16 @@ if ($result->num_rows > 0) {
                 <label for="filter_chung_loai">Chủng loại</label>
                 <select name="filter_chung_loai" id="filter_chung_loai" onchange="this.form.submit()">
                     <option value="*" <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == '*') ? 'selected' : ''; ?>>Tất cả</option>
-                    <option value="muop" <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'muop') ? 'selected' : ''; ?>>Mèo Mướp</option>
-                    <option value="vang" <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'vang') ? 'selected' : ''; ?>>Mèo Vàng</option>
+                    <option value="muop" <?php echo ( isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'muop') ? 'selected' : ''; ?>>Mèo Mướp</option>
+                    <option value="vang" <?php echo ( isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'vang') ? 'selected' : ''; ?>>Mèo Vàng</option>
                     <option value="tai_cup" <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'tai_cup') ? 'selected' : ''; ?>>Mèo tai cụp</option>
-                    <option value="Xiêm" <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'Xiêm') ? 'selected' : ''; ?>>Mèo Xiêm</option>
-                    <!-- Thêm các giống mèo khác tùy ý -->
+                    <option value="Ai Cập Sphynx" <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'Ai Cập Sphynx') ? 'selected' : ''; ?>>Ai Cập Sphynx</option>
+                    <option value="Anh Lông Ngắn" <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'Anh Lông Ngắn') ? 'selected' : ''; ?>>Anh Lông Ngắn</option>
+                    <option value="Anh Lông Dài" <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'Anh Lông Dài') ? 'selected' : ''; ?>>Anh Lông Dài</option>
+                    <option value="Ba Tư" <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'Ba Tư') ? 'selected' : ''; ?>>Ba Tư</option>
+                    <option value="Chân Ngắn Munchkin" <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'Chân Ngắn Munchkin') ? 'selected' : ''; ?>>Chân Ngắn Munchkin</option>
+                    <option value="Ragdoll" <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'Ragdoll') ? 'selected' : ''; ?>>Ragdoll</option>
+                    <option value="Xiêm" <?php echo ( isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'Xiêm') ? 'selected' : ''; ?>>Mèo Xiêm</option>
                 </select>
             </form>                 
 
@@ -267,16 +276,26 @@ if ($result->num_rows > 0) {
         <th>Vaccin Dại</th>
         <th>Vaccin Phức Mạc</th>
         <th>Tẩy Giun</th>
-        <th>Trạng Thái</th>
+        <th>Ẩn/Hiện</th>
+        <th>Trạng thái</th>
         <th>Hành Động</th>
     </tr>
     </thead>
     <tbody>";
     
     while ($row = $result->fetch_assoc()) {
+        if(htmlspecialchars($row['chung_loai']) == 'muop'){
+            $chung_loai = 'Mướp';
+        }elseif(htmlspecialchars($row['chung_loai']) == 'vang'){
+            $chung_loai = 'Vàng';
+        }elseif(htmlspecialchars($row['chung_loai']) == 'tai_cup'){
+            $chung_loai = 'Tai cụp';
+        }else{
+            $chung_loai = htmlspecialchars($row['chung_loai']);
+        }
         echo "<tr>
             <td>" . htmlspecialchars($row['id_cat']) . "</td>
-            <td>" . htmlspecialchars($row['chung_loai']) . "</td>
+            <td>" . $chung_loai . "</td>
             <td>" . htmlspecialchars($row['ten_meo']) . "</td>
             <td><img src='" . htmlspecialchars($row['anh']) . "' alt='Ảnh sản phẩm'></td>
             <td>" . htmlspecialchars($row['price']) . "</td>
@@ -289,6 +308,7 @@ if ($result->num_rows > 0) {
             <td>" . ($row['vaccin_phuc_mac'] == 1 ? 'Có' : 'Không') . "</td>
             <td>" . ($row['tay_giun'] == 1 ? 'Có' : 'Không') . "</td>
             <td>" . ($row['an_hien'] == '1' ? 'Hiện' : 'Ẩn') . "</td>
+            <td>" . ($row['trang_thai'] == '1' ? 'Còn hàng' : 'Đã bán') . "</td>
             <td class='actions'>
                 <form action='' method='post'>
                     <input type='hidden' name='delete_cat' value='" . htmlspecialchars($row['id_cat']) . "'>
