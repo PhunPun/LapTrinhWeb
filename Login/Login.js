@@ -78,9 +78,6 @@ window.onload = () => {
                 userDisplay.innerHTML = "Đăng nhập";
               }
             }
-            setTimeout(() => {
-              location.reload(); // Làm mới trang sau khi DOM của cửa sổ cha đã được cập nhật
-            }, 500); // Đợi 500ms trước khi làm mới
             location.reload();
           } else {
             alert("Lỗi khi đăng xuất.");

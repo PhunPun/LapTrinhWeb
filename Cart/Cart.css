@@ -211,6 +211,43 @@ body {
     border-color: aqua
 }
 
+
+.total-price {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 20px;
+    color: #ff4d4d;
+}
+.dat_hang {
+    background-color: rgba(210, 142, 87, 0.854);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 50%;
+    height: 40px;
+    
+}
+
+.dat_hang:hover {
+    text-decoration: underline;
+    color: black;
+    border: 3px solid;
+    border-color: aqua;
+}
+@media (max-width: 768px) {
+    #order-section {
+        flex-direction: column;
+    }
+    #order-form, #cart-info {
+        width: 100%;
+    }
+}
+
 .remove-item {
     padding: 8px 16px;
     background-color: #ff4d4d;
@@ -226,40 +263,4 @@ body {
     border: 2px solid ;
     border-color: aqua;
     cursor: pointer;
-}
-
-.total-price {
-    font-size: 20px;
-    font-weight: bold;
-    text-align: right;
-    margin-right: 20px;
-    margin-top: 20px;
-    color: #ff4d4d;
-}
-button[type="submit"] {
-    background-color: rgba(210, 142, 87, 0.854);
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 50%;
-    height: 40px;
-    
-}
-
-button[type="submit"]:hover {
-    text-decoration: underline;
-    color: black;
-    border: 3px solid;
-    border-color: aqua;
-}
-@media (max-width: 768px) {
-    #order-section {
-        flex-direction: column;
-    }
-    #order-form, #cart-info {
-        width: 100%;
-    }
 }

@@ -37,7 +37,7 @@
                     <li>
                         <ul class="product-subMenu2">
                             <li><a class="menu-kind fonrt-Roboto_Slab product-active-menu"
-                                    onclick="loadIframe('../manage/manage.php',this)">Thống kê</a></li>
+                                    onclick="loadIframe('../statistical/statistical.php',this)">Thống kê</a></li>
                             <li>
                                 <a class="menu-kind fonrt-Roboto_Slab" onclick="choose(this)">Quản lí sản phẩm</a>
                                 <ul class="product-subMenu3 manage_product">
@@ -63,7 +63,7 @@
             <!-- main -->
             <div class="product-main-option-over">
                 <div class="space"></div>
-                <iframe id="content_iframe" src="../Homes/Home.php" width="99%" height="100%" frameborder="0"
+                <iframe id="content_iframe" src="../statistical/statistical.php" width="99%" height="100%" frameborder="0"
                     allowfullscreen></iframe>
             </div>
         </div>

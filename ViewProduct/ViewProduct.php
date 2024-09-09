@@ -6,6 +6,8 @@
   }else{
     $id="";
   }
+  //-----------------------------------------------lấy thông tin người dùng----------------------------------------
+  //----------------------------------------------lấy thông tin sản phẩm----------------------------------------------------
   $sql = "SELECT * FROM all_product_cat WHERE LEFT(id_cat,4) = '$id4'";
   $result = $conn->query($sql);
   $rows = array();
@@ -44,7 +46,55 @@
     <?php
       include "../view/Header.php";
     ?>
+    <?php
+      if (isset($_SESSION['username'])) {
+        $username = $_SESSION['username'];
+        $stmt_user = $conn->prepare("SELECT * FROM tai_khoan WHERE username = ?");
+        $stmt_user->bind_param("s", $username);
+        $stmt_user->execute();
+        $result_user = $stmt_user->get_result();
+        if ($result_user->num_rows > 0) {
+          $row_user = $result_user->fetch_assoc();
+          //----------------------------------------------them san pham----------------------------------------------------
+            if(isset($_POST['them_gio_hang']) || isset($_POST['mua_ngay'])){
+              if(!empty($rows)){
+                  // Kiểm tra xem sản phẩm đã có trong giỏ hàng chưa
+                $stmt_check = $conn->prepare("SELECT * FROM gio_hang WHERE ma_san_pham = ? AND id_user = ?");
+                $stmt_check->bind_param("si", $rows[0]['id_cat'], $row_user['id']);
+                $stmt_check->execute();
+                $result_check = $stmt_check->get_result();
 
+                if ($result_check->num_rows > 0) {
+                    // Sản phẩm đã có trong giỏ hàng
+                    echo "<script>alert('Sản phẩm đã có trong giỏ hàng rồi.');</script>";
+                } else {
+                    // Sản phẩm chưa có trong giỏ hàng, thực hiện thêm vào giỏ hàng
+                    $stmt = $conn->prepare("INSERT INTO gio_hang (ma_san_pham, ten_san_pham, price, anh, id_user) VALUES (?, ?, ?, ?, ?)");
+                    $stmt->bind_param("ssisi", $rows[0]['id_cat'], $rows[0]['ten_meo'], $rows[0]['price'], $rows[0]['anh'], $row_user['id']);
+                    
+                    if ($stmt->execute()) {
+                        echo "<script>alert('Thêm sản phẩm vào giỏ hàng thành công.');</script>";
+                    } else {
+                        echo "<script>alert('Có lỗi khi thêm sản phẩm vào giỏ hàng: " . htmlspecialchars($stmt->error) . "');</script>";
+                    }
+                    $stmt->close();
+                }
+                $stmt_check->close();
+              }
+            }
+        } else {
+          echo "<script>alert('Không tìm thấy người dùng');</script>";
+        }
+        
+        $stmt_user->close();
+      } else {
+        if(isset($_POST['them_gio_hang']) || isset($_POST['mua_ngay'])){
+          echo "<script>alert('Bạn chưa đăng nhập. Hãy đăng nhập trước nhé!');</script>";
+        }
+      }
+      
+      
+    ?>
     <!------------------------------------ section ------------------------------------>
     <section>
       <div class="view-container">
@@ -131,10 +181,21 @@
                   </div>
                   <div class="main-right-price">
                     <span><?php echo number_format($rows[0]['price'],0,",",".") ?></span><sup>đ</sup>
-                    <div class="main-right-price-button">
-                      <div class="main-price-button-add" onclick="addToCart()">Thêm vào giỏ hàng</div>
-                     <div class="main-price-button-buy" onclick="addToCart()"><a href="../Cart/Cart.php">Mua ngay</a></div>
-                    </div>                    
+                    <form action="" method="post">
+                      <div class="main-right-price-button">
+                        
+                        <!-- Nút Thêm vào giỏ hàng -->
+                        <button class="main-price-button-add" type="submit" name="them_gio_hang" onclick="window.location.reload();">
+                          Thêm vào giỏ hàng
+                        </button>
+                        
+                        <!-- Nút Mua ngay -->
+                        <button class="main-price-button-buy" type="submit" name="mua_ngay" onclick="window.location.href='../Cart/Cart.php';">
+                          Mua ngay
+                        </button>
+                        
+                      </div> 
+                    </form>
                   </div>
                 </div>
             </div>
