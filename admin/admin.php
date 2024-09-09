@@ -65,13 +65,9 @@ session_start();
             </div>
             <!-- main -->
             <div class="product-main-option-over">
-<<<<<<< HEAD
                 <div class="space"></div>
                 <iframe id="content_iframe" src="../statistical/statistical.php" width="99%" height="100%" frameborder="0"
                     allowfullscreen></iframe>
-=======
-                <iframe id="content_iframe" src="../Homes/Home.php" frameborder="0" allowfullscreen></iframe>
->>>>>>> dce5fe456b368323d44312743d709c2ff1dbfb95
             </div>
         </div>
     </section>

@@ -24,45 +24,45 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tai_khoan`
+-- Table structure for table `gio_hang`
 --
 
-CREATE TABLE `tai_khoan` (
-  `id` int(11) NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `phone` int(11) NOT NULL,
-  `role` enum('0','1') NOT NULL DEFAULT '1'
+CREATE TABLE `gio_hang` (
+  `ma_san_pham` varchar(20) NOT NULL,
+  `ten_san_pham` varchar(50) NOT NULL,
+  `price` int(11) NOT NULL,
+  `anh` varchar(20) NOT NULL,
+  `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tai_khoan`
+-- Dumping data for table `gio_hang`
 --
 
-INSERT INTO `tai_khoan` (`id`, `username`, `password`, `email`, `phone`, `role`) VALUES
-(3, 'phuong', '123456', 'nguyennhuphuong23012004@gmail.com', 869801744, '0'),
-(5, 'phuong2', '123456', 'nguyennhuphuong23012004@gmail.com', 869801744, '1');
+INSERT INTO `gio_hang` (`ma_san_pham`, `ten_san_pham`, `price`, `anh`, `id_user`) VALUES
+('M3050', 'Sphynx trắng đực', 43000000, '../images/M3050.jpg', 3),
+('M4050', 'ALN Bicolor cái', 31000000, '../images/M4050.jpg', 3);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `tai_khoan`
+-- Indexes for table `gio_hang`
 --
-ALTER TABLE `tai_khoan`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `gio_hang`
+  ADD PRIMARY KEY (`ma_san_pham`),
+  ADD KEY `user_cart` (`id_user`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Constraints for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `tai_khoan`
+-- Constraints for table `gio_hang`
 --
-ALTER TABLE `tai_khoan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `gio_hang`
+  ADD CONSTRAINT `user_cart` FOREIGN KEY (`id_user`) REFERENCES `tai_khoan` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
