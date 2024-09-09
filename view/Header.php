@@ -1,5 +1,8 @@
+<?php
+session_start();
+?>
 
-    <!------------------------------------ header ------------------------------------>
+   <!------------------------------------ header ------------------------------------>
     <header>
       <a href="../Homes/Home.php" class="logo">
         <img src="../images/logo.png" alt="" />
@@ -17,7 +20,7 @@
         <div class="other23">
           <li class="other2">
             <a onclick="supportlg()"><i class="fas fa-user"></i></a>
-            <span id="user-display" onclick="supportlg()">Đăng Nhập</span>
+            <span id="user-displays" onclick="supportlg()"><?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'Đăng nhập'; ?></span>
           </li>
           <li class="other3">
             <a href="../Cart/Cart.php"><i class="fas fa-shopping-cart"></i></a>
@@ -25,3 +28,4 @@
         </div>
       </div>
     </header>
+
