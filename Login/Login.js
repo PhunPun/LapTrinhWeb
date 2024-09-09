@@ -1,3 +1,4 @@
+
 var w;
 // Mở cửa sổ hỗ trợ
 function support() {

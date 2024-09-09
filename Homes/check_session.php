@@ -2,7 +2,6 @@
 session_start();
 header('Content-Type: application/json');
 
-// Kiểm tra xem người dùng đã đăng nhập chưa
 if (isset($_SESSION['username'])) {
     echo json_encode([
         'loggedIn' => true,
