@@ -4,172 +4,20 @@ include "../connect.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danh sách sản phẩm</title>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
+    <link rel="stylesheet" href="./manage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-
-        table th, table td {
-            padding: 10px;
-            text-align: center;
-            border: 1px solid #ccc;
-            width: 6.25%;
-        }
-
-        table th {
-            background-color: #4CAF50;
-            color: white;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        table td {
-            height: 150px;
-            background-color: #fff;
-            vertical-align: middle;
-        }
-
-        tr:nth-child(even) td {
-            background-color: rgba(210, 142, 87, 0.300);
-        }
-
-        img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-
-        .actions form {
-            display: inline-block;
-        }
-
-        .actions input[type="submit"] {
-            padding: 5px 10px;
-            background-color: #f44336;
-            border: none;
-            color: white;
-            cursor: pointer;
-            margin-right: 5px;
-            border-radius: 3px;
-        }
-
-        .actions input[type="submit"]:hover {
-            background-color: #d32f2f;
-        }
-
-        .actions input[type="submit"][value="Ẩn"], 
-        .actions input[type="submit"][value="Hiện"] {
-            background-color: #2196F3;
-        }
-
-        .actions input[type="submit"][value="Ẩn"]:hover,
-        .actions input[type="submit"][value="Hiện"]:hover {
-            background-color: #1976D2;
-        }
-
-        @media (max-width: 768px) {
-            table, thead, tbody, th, td, tr {
-                display: block;
-            }
-
-            table th {
-                background-color: transparent;
-                position: absolute;
-                top: -9999px;
-                left: -9999px;
-            }
-
-            tr {
-                margin-bottom: 20px;
-            }
-
-            td {
-                border: none;
-                position: relative;
-                padding-left: 50%;
-                text-align: left;
-            }
-
-            td:before {
-                position: absolute;
-                top: 10px;
-                left: 10px;
-                width: 45%;
-                padding-right: 10px;
-                white-space: nowrap;
-            }
-
-            td:nth-of-type(1):before { content: "ID"; }
-            td:nth-of-type(2):before { content: "Chủng Loại"; }
-            td:nth-of-type(3):before { content: "Tên Mèo"; }
-            td:nth-of-type(4):before { content: "Ảnh"; }
-            td:nth-of-type(5):before { content: "Giá"; }
-            td:nth-of-type(6):before { content: "Tuổi"; }
-            td:nth-of-type(7):before { content: "Cân Nặng"; }
-            td:nth-of-type(8):before { content: "Giới Tính"; }
-            td:nth-of-type(9):before { content: "Nguồn Gốc"; }
-            td:nth-of-type(10):before { content: "Vaccin 4 Bệnh"; }
-            td:nth-of-type(11):before { content: "Vaccin Dại"; }
-            td:nth-of-type(12):before { content: "Vaccin Phức Mạc"; }
-            td:nth-of-type(13):before { content: "Tẩy Giun"; }
-            td:nth-of-type(14):before { content: "Trạng Thái"; }
-            td:nth-of-type(15):before { content: "Hành Động"; }
-        }
-
-        #backToTopBtn {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 0;
-            z-index: 1000;
-            font-size: 18px;
-            border: none;
-            outline: none;
-            background-color: #4CAF50;
-            color: white;
-            cursor: pointer;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            transition: opacity 0.3s;
-        }
-
-        #backToTopBtn:hover {
-            background-color: #45a049;
-        }
-        #filter_chung_loai{
-            width: 60px;
-        }
-    </style>
 </head>
-<body>
 
-<h1>Danh sách sản phẩm</h1>
-<?php
+<body>  
+
+    <h1>Danh sách sản phẩm</h1>
+    <?php
 // Xử lý việc xóa sản phẩm
 if (isset($_POST['delete_cat'])) {
     $id_cat = $_POST['delete_cat'];
@@ -244,26 +92,48 @@ if ($result->num_rows > 0) {
         <th>ID</th>
         "?>
 
-        <th>
-            <form action="" method="post">
-                <label for="filter_chung_loai">Chủng loại</label>
-                <select name="filter_chung_loai" id="filter_chung_loai" onchange="this.form.submit()">
-                    <option value="*" <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == '*') ? 'selected' : ''; ?>>Tất cả</option>
-                    <option value="muop" <?php echo ( isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'muop') ? 'selected' : ''; ?>>Mèo Mướp</option>
-                    <option value="vang" <?php echo ( isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'vang') ? 'selected' : ''; ?>>Mèo Vàng</option>
-                    <option value="tai_cup" <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'tai_cup') ? 'selected' : ''; ?>>Mèo tai cụp</option>
-                    <option value="Ai Cập Sphynx" <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'Ai Cập Sphynx') ? 'selected' : ''; ?>>Ai Cập Sphynx</option>
-                    <option value="Anh Lông Ngắn" <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'Anh Lông Ngắn') ? 'selected' : ''; ?>>Anh Lông Ngắn</option>
-                    <option value="Anh Lông Dài" <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'Anh Lông Dài') ? 'selected' : ''; ?>>Anh Lông Dài</option>
-                    <option value="Ba Tư" <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'Ba Tư') ? 'selected' : ''; ?>>Ba Tư</option>
-                    <option value="Chân Ngắn Munchkin" <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'Chân Ngắn Munchkin') ? 'selected' : ''; ?>>Chân Ngắn Munchkin</option>
-                    <option value="Ragdoll" <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'Ragdoll') ? 'selected' : ''; ?>>Ragdoll</option>
-                    <option value="Xiêm" <?php echo ( isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'Xiêm') ? 'selected' : ''; ?>>Mèo Xiêm</option>
-                </select>
-            </form>                 
+    <th>
+        <form action="" method="post">
+            <label for="filter_chung_loai">Chủng loại</label>
+            <select name="filter_chung_loai" id="filter_chung_loai" onchange="this.form.submit()">
+                <option value="*"
+                    <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == '*') ? 'selected' : ''; ?>>
+                    Tất cả</option>
+                <option value="muop"
+                    <?php echo ( isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'muop') ? 'selected' : ''; ?>>
+                    Mèo Mướp</option>
+                <option value="vang"
+                    <?php echo ( isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'vang') ? 'selected' : ''; ?>>
+                    Mèo Vàng</option>
+                <option value="tai_cup"
+                    <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'tai_cup') ? 'selected' : ''; ?>>
+                    Mèo tai cụp</option>
+                <option value="Ai Cập Sphynx"
+                    <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'Ai Cập Sphynx') ? 'selected' : ''; ?>>
+                    Ai Cập Sphynx</option>
+                <option value="Anh Lông Ngắn"
+                    <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'Anh Lông Ngắn') ? 'selected' : ''; ?>>
+                    Anh Lông Ngắn</option>
+                <option value="Anh Lông Dài"
+                    <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'Anh Lông Dài') ? 'selected' : ''; ?>>
+                    Anh Lông Dài</option>
+                <option value="Ba Tư"
+                    <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'Ba Tư') ? 'selected' : ''; ?>>
+                    Ba Tư</option>
+                <option value="Chân Ngắn Munchkin"
+                    <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'Chân Ngắn Munchkin') ? 'selected' : ''; ?>>
+                    Chân Ngắn Munchkin</option>
+                <option value="Ragdoll"
+                    <?php echo (isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'Ragdoll') ? 'selected' : ''; ?>>
+                    Ragdoll</option>
+                <option value="Xiêm"
+                    <?php echo ( isset($_POST['filter_chung_loai']) && $_POST['filter_chung_loai'] == 'Xiêm') ? 'selected' : ''; ?>>
+                    Mèo Xiêm</option>
+            </select>
+        </form>
 
-        </th>
-        <?php
+    </th>
+    <?php
         echo "
         <th>Tên Mèo</th>
         <th>Ảnh</th>
@@ -334,8 +204,11 @@ if ($result->num_rows > 0) {
 $conn->close(); // Đóng kết nối cơ sở dữ liệu
 ob_end_flush(); // Kết thúc output buffering và gửi nội dung đến trình duyệt
 ?>
-<button id="backToTopBtn" title="Quay lại đầu trang">^</button>
-<script>
+    <button id="backToTopBtn" title="Quay lại đầu trang" class="custom-tooltip">
+  <i class="fas fa-arrow-up"></i>
+  
+</button>
+    <script>
     // Lấy phần tử nút
     var backToTopBtn = document.getElementById("backToTopBtn");
 
@@ -354,8 +227,12 @@ ob_end_flush(); // Kết thúc output buffering và gửi nội dung đến trì
 
     // Khi nhấn vào nút, cuộn trở lại đầu trang
     backToTopBtn.onclick = function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     };
-</script>
+    </script>
 </body>
+
 </html>
