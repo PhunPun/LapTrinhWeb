@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 }else{
                     echo "<script>
                     if (window.opener) {
-                        window.opener.location.reload(); // Làm mới trang chính
+                        window.opener.location.href = '../Homes/Home.php'; // Làm mới trang chính
                     }
                     alert('Đăng nhập thành công!');
                     window.close(); // Đóng cửa sổ đăng nhập

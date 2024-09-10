@@ -443,7 +443,7 @@ section{
     font-size: 12px;
     justify-content: space-around;
 }
-.main-right-price-button > div{
+.main-right-price-button > button{
     display: flex;
     flex-direction: column;
     text-align: center;

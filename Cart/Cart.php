@@ -1,6 +1,32 @@
 <?php
 ob_start();
 include "../connect.php";
+if(isset($_POST['mua_ngay'])){
+    if(!empty($rows)){
+        // Kiểm tra xem sản phẩm đã có trong giỏ hàng chưa
+      $stmt_check = $conn->prepare("SELECT * FROM gio_hang WHERE ma_san_pham = ? AND id_user = ?");
+      $stmt_check->bind_param("si", $rows[0]['id_cat'], $row_user['id']);
+      $stmt_check->execute();
+      $result_check = $stmt_check->get_result();
+
+      if ($result_check->num_rows > 0) {
+          // Sản phẩm đã có trong giỏ hàng
+          echo "<script>alert('Sản phẩm đã có trong giỏ hàng rồi.');</script>";
+      } else {
+          // Sản phẩm chưa có trong giỏ hàng, thực hiện thêm vào giỏ hàng
+          $stmt = $conn->prepare("INSERT INTO gio_hang (ma_san_pham, ten_san_pham, price, anh, id_user) VALUES (?, ?, ?, ?, ?)");
+          $stmt->bind_param("ssisi", $rows[0]['id_cat'], $rows[0]['ten_meo'], $rows[0]['price'], $rows[0]['anh'], $row_user['id']);
+          
+          if ($stmt->execute()) {
+              echo "<script>alert('Thêm sản phẩm vào giỏ hàng thành công.');</script>";
+          } else {
+              echo "<script>alert('Có lỗi khi thêm sản phẩm vào giỏ hàng: " . htmlspecialchars($stmt->error) . "');</script>";
+          }
+          $stmt->close();
+      }
+      $stmt_check->close();
+    }
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">

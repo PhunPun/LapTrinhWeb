@@ -24,7 +24,14 @@ session_start();
             <span id="user-displays" onclick="supportlg()"><?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'Đăng nhập'; ?></span>
           </li>
           <li class="other3">
-            <a href="../Cart/Cart.php"><i class="fas fa-shopping-cart"></i></a>
+            <?php
+            // Kiểm tra xem người dùng đã đăng nhập hay chưa
+            $is_logged_in = isset($_SESSION['username']);
+            ?>
+
+            <a href="<?php echo $is_logged_in ? '../Cart/Cart.php' : '#'; ?>" onclick="<?php echo !$is_logged_in ? "alert('Hãy đăng nhập trước nhé!!'); return false;" : ''; ?>">
+              <i class="fas fa-shopping-cart"></i>
+            </a>
           </li>
         </div>
       </div>

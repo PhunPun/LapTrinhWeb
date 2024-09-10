@@ -23,7 +23,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="../images/icon-title.png" type="image/x-icon" />
-    <title>(M0001)Mèo anh lông ngắn</title>
+    <title>Xem sản phẩm</title>
     <!------------------------------------ Thư viện font chữ ------------------------------------>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,6 +81,9 @@
                 }
                 $stmt_check->close();
               }
+            }
+            if(isset($_POST['mua_ngay'])){
+              echo "<script>window.location.href='../Cart/Cart.php'</script>";
             }
         } else {
           echo "<script>alert('Không tìm thấy người dùng');</script>";
@@ -190,7 +193,7 @@
                         </button>
                         
                         <!-- Nút Mua ngay -->
-                        <button class="main-price-button-buy" type="submit" name="mua_ngay" onclick="window.location.href='../Cart/Cart.php';">
+                        <button class="main-price-button-buy" type="submit" name="mua_ngay">
                           Mua ngay
                         </button>
                         
