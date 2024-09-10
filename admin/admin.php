@@ -52,8 +52,8 @@ session_start();
                                     <li><a class="menu-kind1 fonrt-Roboto_Slab" onclick="loadIframe1('../add_product/add_product.php',this)">Thêm sản phẩm</a></li>
                                 </ul>
                             </li>
-                            <li><a class="menu-kind fonrt-Roboto_Slab">Quản lý đơn hàng</a></li>
-                            <li><a class="menu-kind fonrt-Roboto_Slab">Quản lý khách hàng</a></li>
+                            <li><a class="menu-kind fonrt-Roboto_Slab" onclick="loadIframe('../order_management/order_management.php',this)" >Quản lý đơn hàng</a></li>
+                            <li><a class="menu-kind fonrt-Roboto_Slab" onclick="loadIframe('../customer_management/customer_management.php',this)">Quản lý khách hàng</a></li>
                         </ul>
                     </li>
                 </ul>
