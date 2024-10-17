@@ -7,39 +7,28 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$sql = "SELECT * FROM customers";
+$sql = "SELECT * FROM don_hang LEFT JOIN tai_khoan ON don_hang.id_user = tai_khoan.id;";
 $result = $conn->query($sql);
 
 $customers = [];
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        $email = $row['email'];
-        $orderSql = "SELECT * FROM don_hang WHERE email = ?";
-        $stmt = $conn->prepare($orderSql);
-        $stmt->bind_param("s", $email);
-        $stmt->execute();
-        $orderResult = $stmt->get_result();
+        $customer = $row;
         $orders = [];
+
+        // Truy vấn lấy danh sách đơn hàng của khách hàng
+        $orderSql = "SELECT * FROM don_hang WHERE id_user = ?";
+        $orderStmt = $conn->prepare($orderSql);
+        $orderStmt->bind_param("i", $customer['id_user']);
+        $orderStmt->execute();
+        $orderResult = $orderStmt->get_result();
+
         while ($orderRow = $orderResult->fetch_assoc()) {
-            $productCodes = explode(',', $orderRow['ma_san_pham']);
-            $products = [];
-            foreach ($productCodes as $code) {
-                $productSql = "SELECT * FROM all_product_cat WHERE id_cat = ?";
-                $productStmt = $conn->prepare($productSql);
-                $productStmt->bind_param("s", $code);
-                $productStmt->execute();
-                $productResult = $productStmt->get_result();
-                if ($productResult->num_rows > 0) {
-                    while ($productRow = $productResult->fetch_assoc()) {
-                        $products[] = $productRow;
-                    }
-                }
-            }
-            $orderRow['products'] = $products;
-            $orders[] = $orderRow;
+            $orders[] = $orderRow; // Lưu tất cả đơn hàng của khách hàng
         }
-        $row['orders'] = $orders;
-        $customers[] = $row;
+
+        $customer['orders'] = $orders; // Gán danh sách đơn hàng vào thông tin khách hàng
+        $customers[] = $customer; // Thêm vào mảng kết quả
     }
 }
 
@@ -76,10 +65,10 @@ $conn->close();
                     <?php foreach ($customers as $customer): ?>
                     <tr>
                         <td><?php echo htmlspecialchars($customer['id']); ?></td>
-                        <td><?php echo htmlspecialchars($customer['name']); ?></td>
+                        <td><?php echo htmlspecialchars($customer['nguoi_nhan']); ?></td>
                         <td><?php echo htmlspecialchars($customer['email']); ?></td>
                         <td><?php echo htmlspecialchars($customer['phone']); ?></td>
-                        <td><?php echo htmlspecialchars($customer['address']); ?></td>
+                        <td><?php echo htmlspecialchars($customer['shipping_address']); ?></td>
                         <td>
                             <?php if (!empty($customer['orders'])): ?>
                                 <button class="details-btn" data-id="<?php echo htmlspecialchars($customer['id']); ?>">Chi Tiết</button>

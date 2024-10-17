@@ -7,6 +7,15 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
+// Xử lý cập nhật trạng thái khi form được gửi
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['status']) && isset($_POST['order_id'])) {
+    $status = $conn->real_escape_string($_POST['status']);
+    $order_id = $conn->real_escape_string($_POST['order_id']);
+    $updateSql = "UPDATE don_hang SET trang_thai = '$status' WHERE id = '$order_id'";
+    $conn->query($updateSql);
+}
+
 $sql = "SELECT * FROM don_hang";
 $result = $conn->query($sql);
 ?>
@@ -53,19 +62,27 @@ $result = $conn->query($sql);
                                     <td>{$row['ma_san_pham']}</td>
                                     <td>{$row['order_date']}</td>
                                     <td>{$row['email']}</td>
-                                    <td>{$row['trang_thai']}</td>
+                                    <td>
+                                        <form action='' method='post'>
+                                            <input type='hidden' name='order_id' value='{$row['id']}'>
+                                            <select name='status' onchange='this.form.submit()'>
+                                                <option value='Đang chờ xác nhận' " . ($row['trang_thai'] == 'Đang chờ xác nhận' ? 'selected' : '') . ">Đang chờ xác nhận</option>
+                                                <option value='Đã xác nhận' " . ($row['trang_thai'] == 'Đã xác nhận' ? 'selected' : '') . ">Đã xác nhận</option>
+                                                <option value='Đang chờ vận chuyển' " . ($row['trang_thai'] == 'Đang chờ vận chuyển' ? 'selected' : '') . ">Đang chờ vận chuyển</option>
+                                                <option value='Đang vận chuyển' " . ($row['trang_thai'] == 'Đang vận chuyển' ? 'selected' : '') . ">Đang vận chuyển</option>
+                                                <option value='Đã giao hàng' " . ($row['trang_thai'] == 'Đã giao hàng' ? 'selected' : '') . ">Đã giao hàng</option>
+                                                <option value='Đã hủy' " . ($row['trang_thai'] == 'Đã hủy' ? 'selected' : '') . ">Đã hủy</option>
+                                            </select>
+                                        </form>
+                                    </td>
                                     <td>{$row['total']}</td>
                                     <td>{$row['shipping_address']}</td>
                                     <td>{$row['payment_method']}</td>
                                     <td>{$row['note']}</td>
-                                    <td class='action-cell'>";
-                            if ($row['trang_thai'] == 'Đang chờ xác nhận') {
-                                echo "<button class='confirm-btn' data-id='{$row['id']}'>Confirm</button>";
-                            } else {
-                                echo "<button class='detail-btn' data-id='{$row['id']}'>Detail</button>";
-                            }
-                            echo "<button class='delete-btn' data-id='{$row['id']}'>Delete</button>
-                                  </td>
+                                    <td class='action-cell'>
+                                        <button class='detail-btn' data-id='{$row['id']}'>Detail</button>
+                                        <button class='delete-btn' data-id='{$row['id']}'>Delete</button>
+                                    </td>
                                   </tr>";
                         }
                     } else {

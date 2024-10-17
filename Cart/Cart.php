@@ -175,12 +175,13 @@ if(isset($_POST['mua_ngay'])){
             </div>
             <div class="total-price">Tổng tiền: <?php echo number_format($total_price,0,",",".") ?></div>      
         </div>
+        <div>
+        </div>
     </section>
         <?php
             if(isset($_POST['btn_dat_hang'])){
                 $name = $_POST['name'];
                 $phone = $_POST['phone'];
-                $ma_san_pham = $all_ma_san_pham;
                 $email = $_POST['email'];
                 $total = $total_price;
                 $address = $_POST['address'];
@@ -205,7 +206,9 @@ if(isset($_POST['mua_ngay'])){
                 }
                 
             }
+            
         ?>
+
         <?php ob_end_flush(); ?>
     <?php include "../view/Footer.php"; ?>
 </body>

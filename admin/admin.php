@@ -53,7 +53,8 @@ session_start();
                                 </ul>
                             </li>
                             <li><a class="menu-kind fonrt-Roboto_Slab" onclick="loadIframe('../order_management/order_management.php',this)" >Quản lý đơn hàng</a></li>
-                            <li><a class="menu-kind fonrt-Roboto_Slab" onclick="loadIframe('../customer_management/customer_management.php',this)">Quản lý khách hàng</a></li>
+                            <!-- <li><a class="menu-kind fonrt-Roboto_Slab" onclick="loadIframe('../customer_management/customer_management.php',this)">Quản lý khách hàng</a></li> -->
+                            
                         </ul>
                     </li>
                 </ul>

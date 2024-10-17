@@ -21,18 +21,26 @@ include "../connect.php";
 // Xử lý việc xóa sản phẩm
 if (isset($_POST['delete_cat'])) {
     $id_cat = $_POST['delete_cat'];
-    $sql = "DELETE FROM all_product_cat WHERE id_cat = ?";
+    $sql_check = "SELECT * FROM all_product_cat WHERE id_cat = '$id_cat' and trang_thai = '0'";
+    $result_check = $conn->query($sql_check);
+    if($result_check->num_rows > 0){
+        echo "<script>alert('Sản phẩm đã có trong đơn hàng, không thể xóa');</script>";
+    }else{
+        $sql = "DELETE FROM all_product_cat WHERE id_cat = ?";
     
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $id_cat);
-    if ($stmt->execute()) {
-        // Xóa thành công, làm mới trang
-        header("Location: " . $_SERVER['PHP_SELF']);
-        exit;
-    } else {
-        echo "Xóa thất bại: " . $stmt->error;
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $id_cat);
+        if ($stmt->execute()) {
+            // Xóa thành công, làm mới trang
+            header("Location: " . $_SERVER['PHP_SELF']);
+            exit;
+        } else {
+            echo "Xóa thất bại: " . $stmt->error;
+        }
+        $stmt->close();
     }
-    $stmt->close();
+
+    
 }
 
 // Xử lý việc thay đổi trạng thái ẩn/hiện

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 09, 2024 at 09:20 PM
+-- Generation Time: Oct 17, 2024 at 06:15 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -601,6 +601,84 @@ INSERT INTO `all_product_cat` (`id_cat`, `chung_loai`, `ten_meo`, `anh`, `price`
 ('M9054', 'Xiêm', 'Xiêm Blue Point cái', '../images/M9054.jpg', 2536000, '7 tuần', 2.8, 0, 'Nga', 1, 1, 1, 1, '1', '1'),
 ('M9055', 'Xiêm', 'Xiêm Blue Point cái', '../images/M9055.jpg', 2536000, '7 tuần', 2.8, 0, 'Nga', 1, 1, 1, 1, '1', '1');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `don_hang`
+--
+
+CREATE TABLE `don_hang` (
+  `id` int(11) NOT NULL,
+  `nguoi_nhan` varchar(100) NOT NULL,
+  `phone` int(11) NOT NULL,
+  `ma_san_pham` varchar(100) NOT NULL,
+  `order_date` date NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `trang_thai` enum('Đang chờ vận chuyển','Đang vận chuyển','Đã giao hàng','Đã hủy','Đã hoàn thành','Chưa thanh toán','Đang chờ xác nhận','Tạm hoãn','Đã xác nhận') NOT NULL DEFAULT 'Đang chờ xác nhận',
+  `total` int(11) NOT NULL,
+  `shipping_address` varchar(100) NOT NULL,
+  `payment_method` varchar(20) NOT NULL,
+  `note` varchar(100) NOT NULL,
+  `id_user` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `don_hang`
+--
+
+INSERT INTO `don_hang` (`id`, `nguoi_nhan`, `phone`, `ma_san_pham`, `order_date`, `email`, `trang_thai`, `total`, `shipping_address`, `payment_method`, `note`, `id_user`) VALUES
+(25, 'Phuong', 869801744, 'M2010, ', '2024-09-09', 'nguyennhuphuong23012004@gmail.com', 'Đang chờ vận chuyển', 15000000, 'abcdefhgjbd', 'COD', '', 5),
+(26, 'Suit_able', 978410127, 'M2010, ', '2024-09-09', 'huy08122004@gmail.com', 'Đã xác nhận', 15000000, '111', 'COD', '', 5),
+(27, 'Phuong', 869801744, 'M2010, ', '2024-09-09', 'nguyennhuphuong23012004@gmail.com', 'Đã xác nhận', 15000000, 'abcdefhgjbd', 'COD', '', 5),
+(28, 'Suit_able', 978410127, 'M2050, M4000, ', '2024-09-10', 'huy08122004@gmail.com', 'Đã xác nhận', 35000000, '111', 'COD', '', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gio_hang`
+--
+
+CREATE TABLE `gio_hang` (
+  `id` int(11) NOT NULL,
+  `ma_san_pham` varchar(20) NOT NULL,
+  `ten_san_pham` varchar(50) NOT NULL,
+  `price` int(11) NOT NULL,
+  `anh` varchar(20) NOT NULL,
+  `id_user` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `gio_hang`
+--
+
+INSERT INTO `gio_hang` (`id`, `ma_san_pham`, `ten_san_pham`, `price`, `anh`, `id_user`) VALUES
+(3, 'M4050', 'ALN Bicolor cái', 31000000, '../images/M4050.jpg', 3),
+(5, 'M2000', 'Tai cụp Bicolor đực', 10000000, '../images/M2000.jpg', 5),
+(6, 'M2040', 'Tai cụp Tabbi cái', 16000000, '../images/M2040.jpg', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tai_khoan`
+--
+
+CREATE TABLE `tai_khoan` (
+  `id` int(11) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` int(11) NOT NULL,
+  `role` enum('0','1') NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tai_khoan`
+--
+
+INSERT INTO `tai_khoan` (`id`, `username`, `password`, `email`, `phone`, `role`) VALUES
+(3, 'phuong', '123456', 'nguyennhuphuong23012004@gmail.com', 869801744, '0'),
+(5, 'phuong2', '123456', 'nguyennhuphuong23012004@gmail.com', 869801744, '1');
+
 --
 -- Indexes for dumped tables
 --
@@ -610,6 +688,64 @@ INSERT INTO `all_product_cat` (`id_cat`, `chung_loai`, `ten_meo`, `anh`, `price`
 --
 ALTER TABLE `all_product_cat`
   ADD PRIMARY KEY (`id_cat`);
+
+--
+-- Indexes for table `don_hang`
+--
+ALTER TABLE `don_hang`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_donhang` (`id_user`);
+
+--
+-- Indexes for table `gio_hang`
+--
+ALTER TABLE `gio_hang`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_cart` (`id_user`);
+
+--
+-- Indexes for table `tai_khoan`
+--
+ALTER TABLE `tai_khoan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `don_hang`
+--
+ALTER TABLE `don_hang`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- AUTO_INCREMENT for table `gio_hang`
+--
+ALTER TABLE `gio_hang`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `tai_khoan`
+--
+ALTER TABLE `tai_khoan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `don_hang`
+--
+ALTER TABLE `don_hang`
+  ADD CONSTRAINT `user_donhang` FOREIGN KEY (`id_user`) REFERENCES `tai_khoan` (`id`);
+
+--
+-- Constraints for table `gio_hang`
+--
+ALTER TABLE `gio_hang`
+  ADD CONSTRAINT `user_cart` FOREIGN KEY (`id_user`) REFERENCES `tai_khoan` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
